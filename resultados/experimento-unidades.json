@@ -1,0 +1,14 @@
+{
+  "sin_modelo": {
+    "v1": [],
+    "v2": [
+      {
+        "id": "p09",
+        "correcta": false,
+        "problemas": [
+          "la cifra 10 horas aparece en la fuente como 10 %"
+        ]
+      }
+    ]
+  }
+}

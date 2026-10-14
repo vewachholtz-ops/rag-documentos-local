@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tesela: respuestas de la evaluación del motor</title>
+<meta name="description" content="${descripcion}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<meta property="og:title" content="Tesela: respuestas de la evaluación del motor">
+<meta property="og:description" content="${descripcion}">
+<meta property="og:url" content="${url}">
+<meta property="og:image" content="${url}assets/vista-previa.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="La app: una pregunta sobre quién aprueba una compra, la respuesta con su cita y, al lado, la tabla del procedimiento con la fila marcada">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="assets/geist.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script defer src="app.js"></script>
+</head>
+<body>
+${simbolos}
+<div class="app" id="app">
+
+  <aside class="panel fuentes" id="panel-fuentes" aria-label="Fuentes">
+    <header class="cabecera">
+      <h2>Fuentes <span class="cuenta">${documentos}</span></h2>
+      <button type="button" class="icono solo-movil" data-cerrar="panel-fuentes" aria-label="Cerrar las fuentes">${icono_cerrar}</button>
+    </header>
+    <div class="desplazable">
+      <p class="nota-fuentes">Los procedimientos de Faena Cerro Alto, una mina inventada. Toca uno para leerlo.</p>
+      <nav id="lista-documentos" aria-label="Documentos"></nav>
+    </div>
+    <footer class="pie-fuentes">
+      <a href="${repo}">${icono_codigo}Código y evaluación en GitHub</a>
+    </footer>
+  </aside>
+
+  <main class="panel chat" id="contenido" aria-label="Chat">
+    <header class="cabecera">
+      <button type="button" class="icono solo-angosto" data-abrir="panel-fuentes" aria-label="Ver las fuentes">${icono_libro}</button>
+      <h1>Tesela: respuestas de la evaluación del motor</h1>
+      <div class="controles">
+        <span class="en-vivo" id="en-vivo" hidden></span>
+        <button type="button" class="icono" id="nueva" aria-label="Nueva conversación" title="Nueva conversación">${icono_nueva}</button>
+        <button type="button" class="icono solo-angosto" data-abrir="panel-detalle" aria-label="Ver la evaluación">${icono_grafico}</button>
+      </div>
+    </header>
+
+    <div class="desplazable" id="conversacion">
+      <section class="inicio" id="inicio">
+        <div class="marca">${icono_marca}</div>
+        <h2>¿Qué quieres saber de los procedimientos?</h2>
+        <p>Consulta reglas de compras, inventario, mantención y seguridad. Cada respuesta cita el procedimiento y marca el pasaje que usó, para que lo revises.</p>
+        <p class="alcance" id="alcance">Son las respuestas reales que dio el modelo en una evaluación con ${total} preguntas sobre ${documentos} procedimientos de una mina ficticia. Para preguntarle a tus propios documentos, <a href="app/">abre Tesela en el navegador</a> o <a href="${repo}#instalar">instálala</a>.</p>
+        <div class="sugerencias" id="sugerencias"></div>
+        <p class="mas-opciones"><button type="button" class="enlace" data-preguntar="p72" data-con-version="v2">Ver un error conocido</button><button type="button" class="enlace" id="ver-todas">Ver las ${total} preguntas</button></p>
+      </section>
+      <div class="mensajes" id="mensajes" aria-live="polite"></div>
+    </div>
+
+    <form class="redactor" id="redactor">
+      <div class="caja">
+        <textarea id="pregunta" rows="1" placeholder="Pregunta sobre los procedimientos" aria-label="Tu pregunta"></textarea>
+        <button type="submit" class="enviar" aria-label="Enviar la pregunta">${icono_enviar}</button>
+      </div>
+      <p class="nota-redactor" id="nota-redactor">Responde con lo guardado en la evaluación. Para preguntar otra cosa, <a href="app/">usa Tesela con tus documentos</a>.</p>
+    </form>
+  </main>
+
+  <aside class="panel detalle" id="panel-detalle" aria-label="Detalle">
+    <header class="cabecera pestanas" role="tablist">
+      <button type="button" role="tab" aria-selected="false" aria-controls="vista-fuente" data-vista="fuente">Fuente</button>
+      <button type="button" role="tab" aria-selected="true" aria-controls="vista-evaluacion" data-vista="evaluacion">Evaluación</button>
+      <button type="button" class="icono solo-angosto cerrar-detalle" data-cerrar="panel-detalle" aria-label="Cerrar">${icono_cerrar}</button>
+    </header>
+    <div class="desplazable" id="detalle">
+      <section class="vista" id="vista-fuente" role="tabpanel" hidden>
+        <div class="vacio">
+          <p>Toca el número de una cita para ver aquí la sección que usó, con la frase que respalda la respuesta marcada. También puedes abrir cualquier procedimiento de la lista.</p>
+        </div>
+      </section>
+      <section class="vista" id="vista-evaluacion" role="tabpanel">
+        <h3>Cómo le fue en la evaluación</h3>
+        <p class="tenue">${total} preguntas sobre ${documentos} procedimientos: ${con_respuesta} con respuesta y ${trampas} trampas que debía rechazar. Una corrida con gpt-oss 20B en un portátil con una GPU de 8 GB; las cifras valen para este corpus.</p>
+        <div class="cifras">${cifras}</div>
+        <h4>El límite que hay que saber</h4>
+        <p>Que la frase citada esté textual en la fuente no garantiza que la respuesta sea correcta: puede existir y aun así no responder lo que se preguntó. <button type="button" class="enlace" data-preguntar="p72" data-con-version="v2">Ver ese caso</button></p>
+        <details class="configs">
+          <summary>Las ${configuraciones} configuraciones de búsqueda</summary>
+          <p class="tenue">Cuántas de las ${con_respuesta} preguntas con respuesta encuentran la sección correcta en primer lugar. La versión mejorada usa la última.</p>
+          ${barras}
+        </details>
+        <p class="descargas"><a href="${repo}/blob/main/docs/evaluacion.md">Cómo se evaluó</a><a href="evaluacion.json" download>Descargar la evaluación (JSON)</a></p>
+      </section>
+    </div>
+  </aside>
+</div>
+
+<div class="velo" id="velo" hidden></div>
+
+<dialog class="dialogo" id="todas" aria-labelledby="titulo-todas">
+  <header class="cabecera">
+    <h2 id="titulo-todas">Las ${total} preguntas de la evaluación</h2>
+    <button type="button" class="icono" data-cerrar-dialogo aria-label="Cerrar">${icono_cerrar}</button>
+  </header>
+  <div class="buscador"><input type="search" id="filtro" placeholder="Buscar una pregunta" aria-label="Buscar una pregunta"></div>
+  <div class="desplazable" id="lista-preguntas"></div>
+</dialog>
+
+<noscript><p class="sin-js">Esta página necesita JavaScript. Las respuestas y la evaluación también están en <a href="evaluacion.json">evaluacion.json</a> y en el <a href="${repo}">repositorio</a>.</p></noscript>
+</body>
+</html>

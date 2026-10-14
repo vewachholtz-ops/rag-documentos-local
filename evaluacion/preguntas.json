@@ -1,0 +1,736 @@
+[
+ {
+  "id": "p01",
+  "tipo": "directa",
+  "pregunta": "¿Quién aprueba una solicitud de compra de USD 80.000?",
+  "fuente": "PR-COM-01-solicitud-de-compra.md",
+  "seccion": "Niveles de aprobación",
+  "debe_contener": [
+   "gerente de operaciones"
+  ]
+ },
+ {
+  "id": "p02",
+  "tipo": "versión",
+  "pregunta": "¿Cuántas cotizaciones necesito para comprar algo de USD 12.000?",
+  "fuente": "PR-COM-01-solicitud-de-compra.md",
+  "seccion": "Cotizaciones",
+  "debe_contener": [
+   "tres"
+  ]
+ },
+ {
+  "id": "p03",
+  "tipo": "versión",
+  "pregunta": "Se cortó una pala por una falla, ¿hasta qué monto se puede comprar de emergencia y en cuánto tiempo hay que regularizar la SolPed?",
+  "fuente": "PR-COM-01-solicitud-de-compra.md",
+  "seccion": "Compras de emergencia",
+  "debe_contener": [
+   "30.000",
+   "48"
+  ]
+ },
+ {
+  "id": "p04",
+  "tipo": "directa",
+  "pregunta": "¿Qué hago si llegan menos unidades de las que dice la orden de compra?",
+  "fuente": "PR-BOD-01-recepcion-materiales.md",
+  "seccion": "Diferencias en la recepción",
+  "debe_contener": [
+   "2 %"
+  ]
+ },
+ {
+  "id": "p05",
+  "tipo": "directa",
+  "pregunta": "¿Dónde se deja el material que llega dañado y cuánto tiempo puede quedar ahí?",
+  "fuente": "PR-BOD-01-recepcion-materiales.md",
+  "seccion": "Diferencias en la recepción",
+  "debe_contener": [
+   "cuarentena",
+   "10 días"
+  ]
+ },
+ {
+  "id": "p06",
+  "tipo": "directa",
+  "pregunta": "¿A qué hora cierra la recepción de la bodega central?",
+  "fuente": "PR-BOD-01-recepcion-materiales.md",
+  "seccion": "Horario de recepción",
+  "debe_contener": [
+   "17:00"
+  ]
+ },
+ {
+  "id": "p07",
+  "tipo": "directa",
+  "pregunta": "¿Cada cuántas horas se cambia el aceite del motor de los camiones?",
+  "fuente": "PR-MAN-02-mantencion-preventiva.md",
+  "seccion": "Pautas por horas de operación",
+  "debe_contener": [
+   "500"
+  ]
+ },
+ {
+  "id": "p08",
+  "tipo": "directa",
+  "pregunta": "¿Cuál es la meta de disponibilidad física de la flota de camiones?",
+  "fuente": "PR-MAN-02-mantencion-preventiva.md",
+  "seccion": "Indicadores",
+  "debe_contener": [
+   "88 %"
+  ]
+ },
+ {
+  "id": "p09",
+  "tipo": "directa",
+  "pregunta": "¿Hasta cuántas horas puedo atrasar la PM2 sin pedir autorización?",
+  "fuente": "PR-MAN-02-mantencion-preventiva.md",
+  "seccion": "Tolerancia",
+  "debe_contener": [
+   [
+    "550",
+    "50 horas"
+   ]
+  ]
+ },
+ {
+  "id": "p10",
+  "tipo": "directa",
+  "pregunta": "¿Qué nivel de servicio tienen los repuestos clase B?",
+  "fuente": "PR-INV-01-politica-de-inventario.md",
+  "seccion": "Política de reposición",
+  "debe_contener": [
+   "95 %"
+  ]
+ },
+ {
+  "id": "p11",
+  "tipo": "directa",
+  "pregunta": "¿Cómo se calcula el stock de seguridad?",
+  "fuente": "PR-INV-01-politica-de-inventario.md",
+  "seccion": "Política de reposición",
+  "debe_contener": [
+   [
+    "√(L + R)",
+    "sqrt{L + R}"
+   ]
+  ]
+ },
+ {
+  "id": "p12",
+  "tipo": "directa",
+  "pregunta": "¿Cuándo se considera obsoleto un repuesto?",
+  "fuente": "PR-INV-01-politica-de-inventario.md",
+  "seccion": "Inventario obsoleto",
+  "debe_contener": [
+   "24 meses"
+  ]
+ },
+ {
+  "id": "p13",
+  "tipo": "directa",
+  "pregunta": "Un compañero dejó su candado puesto y ya se fue de la faena, ¿quién puede autorizar cortarlo?",
+  "fuente": "PR-SEG-03-bloqueo-y-etiquetado.md",
+  "seccion": "Retiro de un candado olvidado",
+  "debe_contener": [
+   "superintendente"
+  ]
+ },
+ {
+  "id": "p14",
+  "tipo": "directa",
+  "pregunta": "¿De qué color son los candados personales de bloqueo?",
+  "fuente": "PR-SEG-03-bloqueo-y-etiquetado.md",
+  "seccion": "Reglas básicas",
+  "debe_contener": [
+   "rojo"
+  ]
+ },
+ {
+  "id": "p15",
+  "tipo": "directa",
+  "pregunta": "¿Cada cuánto se renueva el curso de bloqueo?",
+  "fuente": "PR-SEG-03-bloqueo-y-etiquetado.md",
+  "seccion": "Capacitación",
+  "debe_contener": [
+   "2 años"
+  ]
+ },
+ {
+  "id": "p16",
+  "tipo": "directa",
+  "pregunta": "¿Cuántos días tiene el área técnica para revisar un plano que entregó un contratista?",
+  "fuente": "PR-PRO-04-control-documental.md",
+  "seccion": "Revisión y plazos",
+  "debe_contener": [
+   "10 días hábiles"
+  ]
+ },
+ {
+  "id": "p17",
+  "tipo": "directa",
+  "pregunta": "¿Qué significa que un documento vuelva con código 3?",
+  "fuente": "PR-PRO-04-control-documental.md",
+  "seccion": "Revisión y plazos",
+  "debe_contener": [
+   "rechazado"
+  ]
+ },
+ {
+  "id": "p18",
+  "tipo": "directa",
+  "pregunta": "¿Cuánto es el viático diario por un viaje de trabajo a Santiago?",
+  "fuente": "PR-RRHH-02-turnos-y-viaticos.md",
+  "seccion": "Viáticos",
+  "debe_contener": [
+   "45.000"
+  ]
+ },
+ {
+  "id": "p19",
+  "tipo": "directa",
+  "pregunta": "¿A qué hora sale el bus a la faena desde Calama?",
+  "fuente": "PR-RRHH-02-turnos-y-viaticos.md",
+  "seccion": "Traslados",
+  "debe_contener": [
+   "06:00"
+  ]
+ },
+ {
+  "id": "p20",
+  "tipo": "coloquial",
+  "pregunta": "¿Quién me da el visto bueno para gastar 3 mil dólares en herramientas?",
+  "fuente": "PR-COM-01-solicitud-de-compra.md",
+  "seccion": "Niveles de aprobación",
+  "debe_contener": [
+   "jefe del área"
+  ]
+ },
+ {
+  "id": "p21",
+  "tipo": "coloquial",
+  "pregunta": "¿Cada cuánto le cambian el lubricante al motor de los camiones grandes?",
+  "fuente": "PR-MAN-02-mantencion-preventiva.md",
+  "seccion": "Pautas por horas de operación",
+  "debe_contener": [
+   "500"
+  ]
+ },
+ {
+  "id": "p22",
+  "tipo": "coloquial",
+  "pregunta": "Tengo una pieza que lleva dos años sin moverse en el almacén, ¿qué pasa con ella?",
+  "fuente": "PR-INV-01-politica-de-inventario.md",
+  "seccion": "Inventario obsoleto",
+  "debe_contener": [
+   "obsoleto"
+  ]
+ },
+ {
+  "id": "p23",
+  "tipo": "coloquial",
+  "pregunta": "¿Cuánto tiempo trabajo seguido si soy operador y cuánto descanso?",
+  "fuente": "PR-RRHH-02-turnos-y-viaticos.md",
+  "seccion": "Sistemas de turno",
+  "debe_contener": [
+   [
+    "7x7",
+    "7 días"
+   ]
+  ]
+ },
+ {
+  "id": "p24",
+  "tipo": "coloquial",
+  "pregunta": "Antes de meter las manos en una máquina, ¿cómo compruebo que de verdad está apagada?",
+  "fuente": "PR-SEG-03-bloqueo-y-etiquetado.md",
+  "seccion": "Pasos",
+  "debe_contener": [
+   [
+    "energía cero",
+    "tensión"
+   ]
+  ]
+ },
+ {
+  "id": "p25",
+  "tipo": "coloquial",
+  "pregunta": "¿Puedo repartir una compra grande en varias pedidas chicas para que la apruebe mi jefe?",
+  "fuente": "PR-COM-01-solicitud-de-compra.md",
+  "seccion": "Niveles de aprobación",
+  "debe_contener": [
+   "no puede"
+  ]
+ },
+ {
+  "id": "p26",
+  "tipo": "coloquial",
+  "pregunta": "¿Qué número lleva la primera versión de un plano que ya está lista para construir?",
+  "fuente": "PR-PRO-04-control-documental.md",
+  "seccion": "Numeración de revisiones",
+  "debe_contener": [
+   "0"
+  ]
+ },
+ {
+  "id": "p27",
+  "tipo": "coloquial",
+  "pregunta": "¿Qué se revisa si el análisis del lubricante sale con mucho polvo?",
+  "fuente": "PR-MAN-02-mantencion-preventiva.md",
+  "seccion": "Muestras de aceite",
+  "debe_contener": [
+   "admisión de aire"
+  ]
+ },
+ {
+  "id": "p28",
+  "tipo": "trampa",
+  "pregunta": "¿Cuál es el procedimiento para recibir explosivos en la faena?",
+  "fuente": null,
+  "seccion": null,
+  "debe_contener": [],
+  "tambien_contiene": [
+   "PR-EXP-01"
+  ]
+ },
+ {
+  "id": "p29",
+  "tipo": "trampa",
+  "pregunta": "¿Cuántos días de vacaciones al año tiene el personal de la faena?",
+  "fuente": null,
+  "seccion": null,
+  "debe_contener": []
+ },
+ {
+  "id": "p30",
+  "tipo": "trampa",
+  "pregunta": "¿Cuál es la velocidad máxima de los camiones en los caminos de la mina?",
+  "fuente": null,
+  "seccion": null,
+  "debe_contener": []
+ },
+ {
+  "id": "p31",
+  "tipo": "trampa casi",
+  "pregunta": "¿Cuánto es el viático diario por un viaje de trabajo al extranjero?",
+  "fuente": null,
+  "seccion": null,
+  "debe_contener": []
+ },
+ {
+  "id": "p32",
+  "tipo": "trampa casi",
+  "pregunta": "¿A qué hora sale el bus de regreso desde la faena a Calama?",
+  "fuente": null,
+  "seccion": null,
+  "debe_contener": []
+ },
+ {
+  "id": "p33",
+  "tipo": "trampa casi",
+  "pregunta": "¿Cuántos días hábiles tiene el contratista para corregir un documento que volvió con código 2?",
+  "fuente": null,
+  "seccion": null,
+  "debe_contener": []
+ },
+ {
+  "id": "p34",
+  "tipo": "trampa casi",
+  "pregunta": "¿Qué multa se le cobra a un proveedor que llega a la bodega central fuera del horario de recepción?",
+  "fuente": null,
+  "seccion": null,
+  "debe_contener": []
+ },
+ {
+  "id": "p35",
+  "tipo": "parecida",
+  "pregunta": "¿Quién aprueba un contrato de servicio de aseo por USD 120.000?",
+  "fuente": "PR-COM-03-contratacion-de-servicios.md",
+  "seccion": "Niveles de aprobación",
+  "debe_contener": [
+   "superintendente"
+  ]
+ },
+ {
+  "id": "p36",
+  "tipo": "parecida",
+  "pregunta": "¿Cuál es la meta de disponibilidad física de las palas?",
+  "fuente": "PR-MAN-03-mantencion-preventiva-palas.md",
+  "seccion": "Indicadores",
+  "debe_contener": [
+   "92 %"
+  ]
+ },
+ {
+  "id": "p37",
+  "tipo": "parecida",
+  "pregunta": "¿Cuánto se puede atrasar una pauta de mantención de las palas sin pedir autorización?",
+  "fuente": "PR-MAN-03-mantencion-preventiva-palas.md",
+  "seccion": "Tolerancia",
+  "debe_contener": [
+   "5 %"
+  ]
+ },
+ {
+  "id": "p38",
+  "tipo": "parecida",
+  "pregunta": "¿Cada cuánto se renueva el curso de trabajo en altura?",
+  "fuente": "PR-SEG-05-trabajo-en-altura.md",
+  "seccion": "Requisitos",
+  "debe_contener": [
+   "3 años"
+  ]
+ },
+ {
+  "id": "p39",
+  "tipo": "parecida",
+  "pregunta": "¿Hasta qué hora puedo retirar materiales de la bodega central?",
+  "fuente": "PR-BOD-02-despacho-de-materiales.md",
+  "seccion": "Horario de despacho",
+  "debe_contener": [
+   "23:00"
+  ]
+ },
+ {
+  "id": "p40",
+  "tipo": "parecida",
+  "pregunta": "¿Qué diferencia obliga a hacer un segundo conteo de un repuesto clase A?",
+  "fuente": "PR-INV-02-conteo-ciclico.md",
+  "seccion": "Cómo se cuenta",
+  "debe_contener": [
+   "1 %"
+  ]
+ },
+ {
+  "id": "p41",
+  "tipo": "parecida",
+  "pregunta": "¿Qué porcentaje pesa la parte técnica al evaluar las ofertas de una licitación de servicios?",
+  "fuente": "PR-COM-03-contratacion-de-servicios.md",
+  "seccion": "Licitación",
+  "debe_contener": [
+   "60 %"
+  ]
+ },
+ {
+  "id": "p42",
+  "tipo": "parecida",
+  "pregunta": "¿De qué color es el casco de los trabajadores contratistas?",
+  "fuente": "PR-SEG-09-elementos-de-proteccion-personal.md",
+  "seccion": "Color del casco",
+  "debe_contener": [
+   "naranja"
+  ]
+ },
+ {
+  "id": "p43",
+  "tipo": "parecida",
+  "pregunta": "¿Cuánto dura la inducción de faena de un trabajador contratista?",
+  "fuente": "PR-RRHH-04-ingreso-de-contratistas.md",
+  "seccion": "Inducción",
+  "debe_contener": [
+   "8 horas"
+  ]
+ },
+ {
+  "id": "p44",
+  "tipo": "parecida",
+  "pregunta": "¿Qué diferencia de volumen se acepta al recibir una cisterna de diésel?",
+  "fuente": "PR-COM-02-recepcion-de-combustibles.md",
+  "seccion": "Control al recibir",
+  "debe_contener": [
+   "0,5 %"
+  ]
+ },
+ {
+  "id": "p45",
+  "tipo": "parecida",
+  "pregunta": "¿Cada cuánto se evalúa el desempeño de un contratista de servicios?",
+  "fuente": "PR-COM-03-contratacion-de-servicios.md",
+  "seccion": "Evaluación de desempeño",
+  "debe_contener": [
+   "3 meses"
+  ]
+ },
+ {
+  "id": "p46",
+  "tipo": "parecida",
+  "pregunta": "¿Cada cuánto se cuentan los repuestos clase B?",
+  "fuente": "PR-INV-02-conteo-ciclico.md",
+  "seccion": "Frecuencia",
+  "debe_contener": [
+   "3 meses"
+  ]
+ },
+ {
+  "id": "p47",
+  "tipo": "versión",
+  "pregunta": "¿Quién aprueba una solicitud de compra de USD 150.000?",
+  "fuente": "PR-COM-01-solicitud-de-compra.md",
+  "seccion": "Niveles de aprobación",
+  "debe_contener": [
+   "gerente de operaciones"
+  ]
+ },
+ {
+  "id": "p48",
+  "tipo": "versión",
+  "pregunta": "¿Quién aprueba una solicitud de compra de USD 30.000?",
+  "fuente": "PR-COM-01-solicitud-de-compra.md",
+  "seccion": "Niveles de aprobación",
+  "debe_contener": [
+   "superintendente"
+  ]
+ },
+ {
+  "id": "p49",
+  "tipo": "versión",
+  "pregunta": "¿Desde qué monto se piden tres cotizaciones para una compra?",
+  "fuente": "PR-COM-01-solicitud-de-compra.md",
+  "seccion": "Cotizaciones",
+  "debe_contener": [
+   "10.000"
+  ]
+ },
+ {
+  "id": "p50",
+  "tipo": "directa",
+  "pregunta": "¿Qué tasa de descuento se usa para evaluar un proyecto de inversión?",
+  "fuente": "PR-PRO-06-evaluacion-economica.md",
+  "seccion": "Supuestos obligatorios",
+  "debe_contener": [
+   "8 %"
+  ]
+ },
+ {
+  "id": "p51",
+  "tipo": "directa",
+  "pregunta": "¿Qué boleta de garantía entrega un contratista y por qué porcentaje del contrato?",
+  "fuente": "PR-COM-03-contratacion-de-servicios.md",
+  "seccion": "Garantías",
+  "debe_contener": [
+   "10 %"
+  ]
+ },
+ {
+  "id": "p52",
+  "tipo": "directa",
+  "pregunta": "¿A qué presión se inflan los neumáticos de los camiones de extracción?",
+  "fuente": "PR-MAN-05-gestion-de-neumaticos.md",
+  "seccion": "Inspección",
+  "debe_contener": [
+   "100 psi"
+  ]
+ },
+ {
+  "id": "p53",
+  "tipo": "directa",
+  "pregunta": "¿Quién aprueba un ajuste de inventario de USD 8.000?",
+  "fuente": "PR-INV-02-conteo-ciclico.md",
+  "seccion": "Ajustes",
+  "debe_contener": [
+   "controller"
+  ]
+ },
+ {
+  "id": "p54",
+  "tipo": "directa",
+  "pregunta": "¿Cuánto tiempo puede quedar como máximo un residuo peligroso en el patio?",
+  "fuente": "PR-AMB-01-residuos-peligrosos.md",
+  "seccion": "Almacenamiento",
+  "debe_contener": [
+   "6 meses"
+  ]
+ },
+ {
+  "id": "p55",
+  "tipo": "directa",
+  "pregunta": "¿Cuándo se cambian los dientes del balde de una pala?",
+  "fuente": "PR-MAN-03-mantencion-preventiva-palas.md",
+  "seccion": "Dientes del balde",
+  "debe_contener": [
+   "60 %"
+  ]
+ },
+ {
+  "id": "p56",
+  "tipo": "directa",
+  "pregunta": "¿Con cuánta anticipación sube sus documentos una empresa contratista para acreditar a un trabajador?",
+  "fuente": "PR-RRHH-04-ingreso-de-contratistas.md",
+  "seccion": "Acreditación",
+  "debe_contener": [
+   "5 días hábiles"
+  ]
+ },
+ {
+  "id": "p57",
+  "tipo": "directa",
+  "pregunta": "¿Cuál es la meta de espera de los camiones en la pala?",
+  "fuente": "PR-OPE-01-reporte-de-produccion.md",
+  "seccion": "Indicadores",
+  "debe_contener": [
+   "4 minutos"
+  ]
+ },
+ {
+  "id": "p58",
+  "tipo": "directa",
+  "pregunta": "¿Qué elementos de protección personal son obligatorios en la faena?",
+  "fuente": "PR-SEG-09-elementos-de-proteccion-personal.md",
+  "seccion": "EPP básico",
+  "debe_contener": [
+   "casco",
+   "chaleco"
+  ]
+ },
+ {
+  "id": "p59",
+  "tipo": "directa",
+  "pregunta": "¿Cómo se clasifica un proyecto cuyo VAN cambia de signo si la inversión sube 10 %?",
+  "fuente": "PR-PRO-06-evaluacion-economica.md",
+  "seccion": "Sensibilidad",
+  "debe_contener": [
+   "riesgo alto"
+  ]
+ },
+ {
+  "id": "p60",
+  "tipo": "coloquial",
+  "pregunta": "Al camión 14 se le cortó la misma manguera tres veces en dos meses, ¿hay que hacer algo especial?",
+  "fuente": "PR-MAN-07-analisis-causa-raiz.md",
+  "seccion": "Cuándo se hace",
+  "debe_contener": [
+   "causa raíz"
+  ]
+ },
+ {
+  "id": "p61",
+  "tipo": "coloquial",
+  "pregunta": "Casi se nos cae una carga del puente grúa y pudo matar a alguien, ¿en cuánto tiempo hay que investigarlo?",
+  "fuente": "PR-SEG-07-reporte-de-incidentes.md",
+  "seccion": "Plazos",
+  "debe_contener": [
+   "5 días hábiles"
+  ]
+ },
+ {
+  "id": "p62",
+  "tipo": "coloquial",
+  "pregunta": "Me sobró material de una pega, ¿hasta cuándo lo puedo devolver a la bodega?",
+  "fuente": "PR-BOD-02-despacho-de-materiales.md",
+  "seccion": "Devoluciones",
+  "debe_contener": [
+   "5 días hábiles"
+  ]
+ },
+ {
+  "id": "p63",
+  "tipo": "coloquial",
+  "pregunta": "¿Dónde dejo el aceite usado después de una mantención?",
+  "fuente": "PR-AMB-01-residuos-peligrosos.md",
+  "seccion": "Almacenamiento",
+  "debe_contener": [
+   "residuos peligrosos"
+  ]
+ },
+ {
+  "id": "p64",
+  "tipo": "coloquial",
+  "pregunta": "Un neumático tiene un tajo donde se ven las lonas, ¿lo puedo seguir usando?",
+  "fuente": "PR-MAN-05-gestion-de-neumaticos.md",
+  "seccion": "Retiro",
+  "debe_contener": [
+   "retira"
+  ]
+ },
+ {
+  "id": "p65",
+  "tipo": "coloquial",
+  "pregunta": "¿Puedo pagar con la caja chica una compra de 80 lucas?",
+  "fuente": "PR-FIN-01-fondos-fijos-y-rendiciones.md",
+  "seccion": "Fondos fijos",
+  "debe_contener": [
+   "SolPed"
+  ]
+ },
+ {
+  "id": "p66",
+  "tipo": "coloquial",
+  "pregunta": "¿El jefe de turno puede corregir las toneladas que quedaron mal en el despacho?",
+  "fuente": "PR-OPE-01-reporte-de-produccion.md",
+  "seccion": "Correcciones",
+  "debe_contener": [
+   "analista de despacho"
+  ]
+ },
+ {
+  "id": "p67",
+  "tipo": "coloquial",
+  "pregunta": "Si un cambio atrasa el proyecto 45 días, ¿quién tiene que aprobarlo?",
+  "fuente": "PR-PRO-02-control-de-cambios.md",
+  "seccion": "Quién aprueba",
+  "debe_contener": [
+   "comité de inversiones"
+  ]
+ },
+ {
+  "id": "p68",
+  "tipo": "coloquial",
+  "pregunta": "Si alguien queda colgado del arnés, ¿en cuánto tiempo hay que poder sacarlo?",
+  "fuente": "PR-SEG-05-trabajo-en-altura.md",
+  "seccion": "Rescate",
+  "debe_contener": [
+   "15 minutos"
+  ]
+ },
+ {
+  "id": "p69",
+  "tipo": "coloquial",
+  "pregunta": "Se derramaron 300 litros de petróleo, ¿a quién le aviso?",
+  "fuente": "PR-AMB-01-residuos-peligrosos.md",
+  "seccion": "Derrames",
+  "debe_contener": [
+   "jefe de medio ambiente"
+  ]
+ },
+ {
+  "id": "p70",
+  "tipo": "trampa casi",
+  "pregunta": "¿Cuántas personas se necesitan como mínimo para armar un andamio?",
+  "fuente": null,
+  "seccion": null,
+  "debe_contener": []
+ },
+ {
+  "id": "p71",
+  "tipo": "trampa casi",
+  "pregunta": "¿Cuál es la meta de vida media de los neumáticos de las camionetas?",
+  "fuente": null,
+  "seccion": null,
+  "debe_contener": []
+ },
+ {
+  "id": "p72",
+  "tipo": "trampa casi",
+  "pregunta": "¿De cuánto es el fondo fijo de cada gerencia?",
+  "fuente": null,
+  "seccion": null,
+  "debe_contener": []
+ },
+ {
+  "id": "p73",
+  "tipo": "trampa casi",
+  "pregunta": "¿Cuántos días se demora el laboratorio en entregar el análisis de aceite?",
+  "fuente": null,
+  "seccion": null,
+  "debe_contener": []
+ },
+ {
+  "id": "p74",
+  "tipo": "trampa casi",
+  "pregunta": "¿De qué color es el casco de los practicantes?",
+  "fuente": null,
+  "seccion": null,
+  "debe_contener": []
+ }
+]

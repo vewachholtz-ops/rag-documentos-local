@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.png binary
+*.woff2 binary
+*.bat text eol=crlf
+*.cmd text eol=crlf
+# app/ es la salida de `npm run build` (cd interfaz && npm run build): no se convierte ni se muestra en los diffs.
+app/** -text -diff linguist-generated=true

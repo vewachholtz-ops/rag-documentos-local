@@ -1,0 +1,2952 @@
+{
+  "modelos": {
+    "embeddings": "nomic-embed-text",
+    "respuestas": "gpt-oss:20b",
+    "auxiliar": "gpt-oss:20b"
+  },
+  "preguntas": 74,
+  "calibracion_juez": {
+    "aciertos": 6,
+    "casos": 6,
+    "detalle": [
+      {
+        "respuesta": "Lo aprueba el jefe del área solicitante [1].",
+        "esperado": 1.0,
+        "obtenido": 1.0
+      },
+      {
+        "respuesta": "Lo aprueba el gerente general [1].",
+        "esperado": 0.0,
+        "obtenido": 0.0
+      },
+      {
+        "respuesta": "El curso dura 8 horas [1] y se renueva cada 3 años [1].",
+        "esperado": 0.5,
+        "obtenido": 0.5
+      },
+      {
+        "respuesta": "El aceite se cambia cada 500 horas [1].",
+        "esperado": 1.0,
+        "obtenido": 1.0
+      },
+      {
+        "respuesta": "Son rojos [1] y los entrega el supervisor al inicio del turno [1].",
+        "esperado": 0.5,
+        "obtenido": 0.5
+      },
+      {
+        "respuesta": "Se deja en la zona de cuarentena, al fondo del galpón 2 [1].",
+        "esperado": 1.0,
+        "obtenido": 1.0
+      }
+    ]
+  },
+  "busqueda": {
+    "BM25": {
+      "acierto@1": 0.7580645161290323,
+      "acierto@3": 0.8225806451612904,
+      "acierto@5": 0.8709677419354839,
+      "mrr@5": 0.8024193548387096,
+      "acierto_documento@4": 0.9516129032258065,
+      "fallas": [
+        "p04",
+        "p20",
+        "p22",
+        "p24",
+        "p61",
+        "p63",
+        "p65",
+        "p66"
+      ],
+      "acierto@5_por_tipo": {
+        "directa": 0.9629629629629629,
+        "versión": 1.0,
+        "coloquial": 0.6111111111111112,
+        "parecida": 1.0
+      }
+    },
+    "Vectores": {
+      "acierto@1": 0.6451612903225806,
+      "acierto@3": 0.7741935483870968,
+      "acierto@5": 0.8064516129032258,
+      "mrr@5": 0.7088709677419355,
+      "acierto_documento@4": 0.8548387096774194,
+      "fallas": [
+        "p04",
+        "p20",
+        "p22",
+        "p23",
+        "p24",
+        "p25",
+        "p27",
+        "p40",
+        "p57",
+        "p60",
+        "p63",
+        "p65"
+      ],
+      "acierto@5_por_tipo": {
+        "directa": 0.9259259259259259,
+        "versión": 1.0,
+        "coloquial": 0.5,
+        "parecida": 0.9166666666666666
+      }
+    },
+    "Híbrido (v1)": {
+      "acierto@1": 0.6935483870967742,
+      "acierto@3": 0.8387096774193549,
+      "acierto@5": 0.8870967741935484,
+      "mrr@5": 0.7666666666666667,
+      "acierto_documento@4": 0.9193548387096774,
+      "fallas": [
+        "p04",
+        "p22",
+        "p23",
+        "p24",
+        "p61",
+        "p63",
+        "p65"
+      ],
+      "acierto@5_por_tipo": {
+        "directa": 0.9629629629629629,
+        "versión": 1.0,
+        "coloquial": 0.6666666666666666,
+        "parecida": 1.0
+      }
+    },
+    "Híbrido sin descartar obsoletos": {
+      "acierto@1": 0.6774193548387096,
+      "acierto@3": 0.8225806451612904,
+      "acierto@5": 0.8870967741935484,
+      "mrr@5": 0.7529569892473119,
+      "acierto_documento@4": 0.9032258064516129,
+      "fallas": [
+        "p04",
+        "p22",
+        "p23",
+        "p24",
+        "p61",
+        "p63",
+        "p65"
+      ],
+      "acierto@5_por_tipo": {
+        "directa": 0.9629629629629629,
+        "versión": 1.0,
+        "coloquial": 0.6666666666666666,
+        "parecida": 1.0
+      },
+      "version_con_obsoleto_primero": "1/5"
+    },
+    "Híbrido + contexto": {
+      "acierto@1": 0.6774193548387096,
+      "acierto@3": 0.8225806451612904,
+      "acierto@5": 0.9032258064516129,
+      "mrr@5": 0.7677419354838709,
+      "acierto_documento@4": 0.9032258064516129,
+      "fallas": [
+        "p20",
+        "p22",
+        "p27",
+        "p61",
+        "p63",
+        "p65"
+      ],
+      "acierto@5_por_tipo": {
+        "directa": 1.0,
+        "versión": 1.0,
+        "coloquial": 0.6666666666666666,
+        "parecida": 1.0
+      }
+    },
+    "Híbrido + contexto + reescritura": {
+      "acierto@1": 0.7580645161290323,
+      "acierto@3": 0.9032258064516129,
+      "acierto@5": 0.9516129032258065,
+      "mrr@5": 0.8330645161290324,
+      "acierto_documento@4": 0.9516129032258065,
+      "fallas": [
+        "p22",
+        "p27",
+        "p65"
+      ],
+      "acierto@5_por_tipo": {
+        "directa": 1.0,
+        "versión": 1.0,
+        "coloquial": 0.8333333333333334,
+        "parecida": 1.0
+      }
+    },
+    "Híbrido + contexto + reordenamiento": {
+      "acierto@1": 0.967741935483871,
+      "acierto@3": 0.9838709677419355,
+      "acierto@5": 0.9838709677419355,
+      "mrr@5": 0.9758064516129032,
+      "acierto_documento@4": 0.9838709677419355,
+      "fallas": [
+        "p22"
+      ],
+      "acierto@5_por_tipo": {
+        "directa": 1.0,
+        "versión": 1.0,
+        "coloquial": 0.9444444444444444,
+        "parecida": 1.0
+      }
+    },
+    "Híbrido + contexto + reescritura + reordenamiento": {
+      "acierto@1": 0.9838709677419355,
+      "acierto@3": 1.0,
+      "acierto@5": 1.0,
+      "mrr@5": 0.9919354838709677,
+      "acierto_documento@4": 1.0,
+      "fallas": [],
+      "acierto@5_por_tipo": {
+        "directa": 1.0,
+        "versión": 1.0,
+        "coloquial": 1.0,
+        "parecida": 1.0
+      }
+    }
+  },
+  "respuestas": {
+    "v1": {
+      "busqueda": "Híbrido (v1)",
+      "citas_textuales": false,
+      "resumen": {
+        "correctas": 62,
+        "total": 74,
+        "con_respuesta_correctas": 52,
+        "con_respuesta_total": 62,
+        "trampa_rechazadas": 10,
+        "trampa_total": 12,
+        "citan_seccion_correcta": 54,
+        "respuestas_que_no_pasan_validacion": 6,
+        "correctas_por_tipo": {
+          "directa": "24/27",
+          "versión": "5/5",
+          "coloquial": "11/18",
+          "trampa": "2/3",
+          "trampa casi": "8/9",
+          "parecida": "12/12"
+        },
+        "fidelidad_promedio": 0.981,
+        "segundos_promedio": 12.0
+      },
+      "detalle": [
+        {
+          "id": "p01",
+          "tipo": "directa",
+          "pregunta": "¿Quién aprueba una solicitud de compra de USD 80.000?",
+          "respuesta": "El Gerente de operaciones aprueba una solicitud de compra de USD 80.000. [1]",
+          "correcta": true,
+          "valida": false,
+          "problemas": [
+            "cifras que no aparecen en las fuentes citadas: ['80000']"
+          ],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-COM-01 Solicitud de compra y aprobaciones > Niveles de aprobación",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Cotizaciones",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Compras de emergencia",
+            "PR-INV-02 Conteo cíclico de inventario > Ajustes"
+          ],
+          "segundos": 18.1,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p02",
+          "tipo": "versión",
+          "pregunta": "¿Cuántas cotizaciones necesito para comprar algo de USD 12.000?",
+          "respuesta": "Para una compra de USD 12.000 necesitas al menos tres cotizaciones de proveedores distintos. [1]",
+          "correcta": true,
+          "valida": false,
+          "problemas": [
+            "cifras que no aparecen en las fuentes citadas: ['12000']"
+          ],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-COM-01 Solicitud de compra y aprobaciones > Cotizaciones",
+            "PR-COM-03 Contratación de servicios > Niveles de aprobación",
+            "PR-INV-02 Conteo cíclico de inventario > Ajustes",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Niveles de aprobación"
+          ],
+          "segundos": 28.5,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p03",
+          "tipo": "versión",
+          "pregunta": "Se cortó una pala por una falla, ¿hasta qué monto se puede comprar de emergencia y en cuánto tiempo hay que regularizar la SolPed?",
+          "respuesta": "Se puede autorizar una compra de emergencia de hasta **USD 30.000** y la SolPed debe regularizarse en el ERP en un plazo máximo de **48 horas**. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-COM-01 Solicitud de compra y aprobaciones > Compras de emergencia",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Niveles de aprobación",
+            "PR-MAN-07 Análisis de causa raíz de fallas > Cuándo se hace",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Quién puede solicitar"
+          ],
+          "segundos": 14.6,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p04",
+          "tipo": "directa",
+          "pregunta": "¿Qué hago si llegan menos unidades de las que dice la orden de compra?",
+          "respuesta": "No está en los documentos.",
+          "correcta": false,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": false,
+          "fuentes": [
+            "PR-COM-01 Solicitud de compra y aprobaciones > Cotizaciones",
+            "PR-BOD-01 Recepción de materiales en bodega central > Alcance",
+            "PR-BOD-02 Despacho de materiales desde bodega > Cómo se retira",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Compras de emergencia"
+          ],
+          "segundos": 8.9
+        },
+        {
+          "id": "p05",
+          "tipo": "directa",
+          "pregunta": "¿Dónde se deja el material que llega dañado y cuánto tiempo puede quedar ahí?",
+          "respuesta": "El material dañado se deja en la zona de cuarentena (zona Q, al fondo del galpón 2) [1].  \nPuede permanecer allí hasta 10 días hábiles para su devolución al proveedor o aceptación con nota de crédito [1].",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-BOD-01 Recepción de materiales en bodega central > Diferencias en la recepción",
+            "PR-BOD-01 Recepción de materiales en bodega central > Alcance",
+            "PR-SEG-09 Elementos de protección personal > Reposición",
+            "PR-BOD-02 Despacho de materiales desde bodega > Repuestos reparables"
+          ],
+          "segundos": 12.5,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p06",
+          "tipo": "directa",
+          "pregunta": "¿A qué hora cierra la recepción de la bodega central?",
+          "respuesta": "La recepción de la bodega central cierra a las 17:00. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-BOD-01 Recepción de materiales en bodega central > Horario de recepción",
+            "PR-BOD-01 Recepción de materiales en bodega central > Introducción",
+            "PR-BOD-01 Recepción de materiales en bodega central > Pasos",
+            "PR-BOD-01 Recepción de materiales en bodega central > Diferencias en la recepción"
+          ],
+          "segundos": 8.9,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p07",
+          "tipo": "directa",
+          "pregunta": "¿Cada cuántas horas se cambia el aceite del motor de los camiones?",
+          "respuesta": "El aceite del motor de los camiones se cambia cada 500 horas. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Pautas por horas de operación",
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Muestras de aceite",
+            "PR-MAN-03 Mantención preventiva de palas eléctricas > Pautas",
+            "PR-MAN-05 Gestión de neumáticos de camiones de extracción > Indicadores"
+          ],
+          "segundos": 8.6,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p08",
+          "tipo": "directa",
+          "pregunta": "¿Cuál es la meta de disponibilidad física de la flota de camiones?",
+          "respuesta": "La meta de disponibilidad física de la flota de camiones es del 88 % [1].",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Indicadores",
+            "PR-MAN-03 Mantención preventiva de palas eléctricas > Indicadores",
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Alcance",
+            "PR-MAN-05 Gestión de neumáticos de camiones de extracción > Indicadores"
+          ],
+          "segundos": 8.5,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p09",
+          "tipo": "directa",
+          "pregunta": "¿Hasta cuántas horas puedo atrasar la PM2 sin pedir autorización?",
+          "respuesta": "Puedes atrasar la PM2 hasta 50 horas sin pedir autorización. [1]",
+          "correcta": false,
+          "valida": false,
+          "problemas": [
+            "cifras que no aparecen en las fuentes citadas: ['50']"
+          ],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Tolerancia",
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Pautas por horas de operación",
+            "PR-MAN-03 Mantención preventiva de palas eléctricas > Pautas",
+            "PR-MAN-03 Mantención preventiva de palas eléctricas > Tolerancia"
+          ],
+          "segundos": 26.7,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p10",
+          "tipo": "directa",
+          "pregunta": "¿Qué nivel de servicio tienen los repuestos clase B?",
+          "respuesta": "Los repuestos clase B tienen un nivel de servicio objetivo del 95 % [2].",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-INV-02 Conteo cíclico de inventario > Frecuencia",
+            "PR-INV-01 Política de inventario de repuestos > Política de reposición",
+            "PR-INV-01 Política de inventario de repuestos > Clasificación ABC",
+            "PR-INV-02 Conteo cíclico de inventario > Cómo se cuenta"
+          ],
+          "segundos": 8.3,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p11",
+          "tipo": "directa",
+          "pregunta": "¿Cómo se calcula el stock de seguridad?",
+          "respuesta": "El stock de seguridad se calcula como \\(z \\cdot \\sigma \\cdot \\sqrt{L + R}\\). [2]",
+          "correcta": false,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-COM-02 Recepción y control de combustibles > Inventario de combustible",
+            "PR-INV-01 Política de inventario de repuestos > Política de reposición",
+            "PR-SEG-09 Elementos de protección personal > EPP básico",
+            "PR-SEG-07 Reporte e investigación de incidentes > Introducción"
+          ],
+          "segundos": 9.7,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p12",
+          "tipo": "directa",
+          "pregunta": "¿Cuándo se considera obsoleto un repuesto?",
+          "respuesta": "Un repuesto se considera obsoleto cuando no ha tenido movimiento durante 24 meses. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-INV-01 Política de inventario de repuestos > Inventario obsoleto",
+            "PR-INV-01 Política de inventario de repuestos > Clasificación ABC",
+            "PR-INV-02 Conteo cíclico de inventario > Cómo se cuenta",
+            "PR-AMB-01 Manejo de residuos peligrosos > Qué es un residuo peligroso"
+          ],
+          "segundos": 7.5,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p13",
+          "tipo": "directa",
+          "pregunta": "Un compañero dejó su candado puesto y ya se fue de la faena, ¿quién puede autorizar cortarlo?",
+          "respuesta": "Solo el superintendente del área puede autorizar el corte del candado, después de confirmar por teléfono que el dueño no está en la faena y de inspeccionar el equipo en terreno. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-SEG-03 Bloqueo y etiquetado de energías > Retiro de un candado olvidado",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Compras de emergencia",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Introducción",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Inducción"
+          ],
+          "segundos": 11.0,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p14",
+          "tipo": "directa",
+          "pregunta": "¿De qué color son los candados personales de bloqueo?",
+          "respuesta": "Los candados personales de bloqueo son rojos. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-SEG-03 Bloqueo y etiquetado de energías > Reglas básicas",
+            "PR-SEG-03 Bloqueo y etiquetado de energías > Capacitación",
+            "PR-SEG-09 Elementos de protección personal > Color del casco",
+            "PR-SEG-03 Bloqueo y etiquetado de energías > Retiro de un candado olvidado"
+          ],
+          "segundos": 8.0,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p15",
+          "tipo": "directa",
+          "pregunta": "¿Cada cuánto se renueva el curso de bloqueo?",
+          "respuesta": "El curso de bloqueo se renueva cada 2 años. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-SEG-03 Bloqueo y etiquetado de energías > Capacitación",
+            "PR-SEG-03 Bloqueo y etiquetado de energías > Reglas básicas",
+            "PR-SEG-03 Bloqueo y etiquetado de energías > Pasos",
+            "PR-INV-02 Conteo cíclico de inventario > Frecuencia"
+          ],
+          "segundos": 8.2,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p16",
+          "tipo": "directa",
+          "pregunta": "¿Cuántos días tiene el área técnica para revisar un plano que entregó un contratista?",
+          "respuesta": "El área técnica dispone de 10 días hábiles para revisar el plano entregado por el contratista. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-PRO-04 Control documental de proyectos > Revisión y plazos",
+            "PR-COM-03 Contratación de servicios > Garantías",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Acreditación",
+            "PR-AMB-01 Manejo de residuos peligrosos > Almacenamiento"
+          ],
+          "segundos": 8.9,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p17",
+          "tipo": "directa",
+          "pregunta": "¿Qué significa que un documento vuelva con código 3?",
+          "respuesta": "Un documento con código 3 ha sido **rechazado** y debe volver corregido en una nueva revisión en un plazo de **15 días hábiles**. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-PRO-04 Control documental de proyectos > Revisión y plazos",
+            "PR-COM-03 Contratación de servicios > Introducción",
+            "PR-PRO-04 Control documental de proyectos > Transmittals",
+            "PR-SEG-05 Trabajo en altura > Introducción"
+          ],
+          "segundos": 10.9,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p18",
+          "tipo": "directa",
+          "pregunta": "¿Cuánto es el viático diario por un viaje de trabajo a Santiago?",
+          "respuesta": "El viático diario por un viaje de trabajo a Santiago es de CLP 45.000. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-RRHH-02 Turnos, traslados y viáticos > Viáticos",
+            "PR-SEG-05 Trabajo en altura > Alcance",
+            "PR-RRHH-02 Turnos, traslados y viáticos > Sistemas de turno",
+            "PR-SEG-05 Trabajo en altura > Introducción"
+          ],
+          "segundos": 7.3,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p19",
+          "tipo": "directa",
+          "pregunta": "¿A qué hora sale el bus a la faena desde Calama?",
+          "respuesta": "El bus sale a las 06:00 desde el terminal de la empresa en Calama. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-RRHH-02 Turnos, traslados y viáticos > Traslados",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Introducción",
+            "PR-RRHH-02 Turnos, traslados y viáticos > Introducción",
+            "PR-COM-03 Contratación de servicios > Alcance"
+          ],
+          "segundos": 10.4,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p20",
+          "tipo": "coloquial",
+          "pregunta": "¿Quién me da el visto bueno para gastar 3 mil dólares en herramientas?",
+          "respuesta": "El visto bueno lo da el jefe del área solicitante. [3]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-COM-03 Contratación de servicios > Niveles de aprobación",
+            "PR-AMB-01 Manejo de residuos peligrosos > Derrames",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Niveles de aprobación",
+            "PR-COM-02 Recepción y control de combustibles > Inventario de combustible"
+          ],
+          "segundos": 10.8,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p21",
+          "tipo": "coloquial",
+          "pregunta": "¿Cada cuánto le cambian el lubricante al motor de los camiones grandes?",
+          "respuesta": "El lubricante del motor se cambia cada 500 horas de operación. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Pautas por horas de operación",
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Muestras de aceite",
+            "PR-MAN-03 Mantención preventiva de palas eléctricas > Dientes del balde",
+            "PR-MAN-05 Gestión de neumáticos de camiones de extracción > Retiro"
+          ],
+          "segundos": 14.5,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p22",
+          "tipo": "coloquial",
+          "pregunta": "Tengo una pieza que lleva dos años sin moverse en el almacén, ¿qué pasa con ella?",
+          "respuesta": "No está en los documentos.",
+          "correcta": false,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": false,
+          "fuentes": [
+            "PR-SEG-05 Trabajo en altura > Andamios",
+            "PR-AMB-01 Manejo de residuos peligrosos > Almacenamiento",
+            "PR-SEG-03 Bloqueo y etiquetado de energías > Capacitación",
+            "PR-SEG-05 Trabajo en altura > Requisitos"
+          ],
+          "segundos": 9.6
+        },
+        {
+          "id": "p23",
+          "tipo": "coloquial",
+          "pregunta": "¿Cuánto tiempo trabajo seguido si soy operador y cuánto descanso?",
+          "respuesta": "No está en los documentos.",
+          "correcta": false,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": false,
+          "fuentes": [
+            "PR-SEG-05 Trabajo en altura > Requisitos",
+            "PR-SEG-05 Trabajo en altura > Alcance",
+            "PR-SEG-05 Trabajo en altura > Rescate",
+            "PR-COM-02 Recepción y control de combustibles > Control al recibir"
+          ],
+          "segundos": 11.9
+        },
+        {
+          "id": "p24",
+          "tipo": "coloquial",
+          "pregunta": "Antes de meter las manos en una máquina, ¿cómo compruebo que de verdad está apagada?",
+          "respuesta": "No está en los documentos.",
+          "correcta": false,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": false,
+          "fuentes": [
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Muestras de aceite",
+            "PR-MAN-03 Mantención preventiva de palas eléctricas > Pautas",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Niveles de aprobación",
+            "PR-COM-03 Contratación de servicios > Niveles de aprobación"
+          ],
+          "segundos": 9.1
+        },
+        {
+          "id": "p25",
+          "tipo": "coloquial",
+          "pregunta": "¿Puedo repartir una compra grande en varias pedidas chicas para que la apruebe mi jefe?",
+          "respuesta": "No, no puedes. Según la política, “Una compra no puede dividirse en varias SolPed para quedar bajo un nivel de aprobación” [2].",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-COM-01 Solicitud de compra y aprobaciones > Introducción",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Niveles de aprobación",
+            "PR-AMB-01 Manejo de residuos peligrosos > Introducción",
+            "PR-COM-03 Contratación de servicios > Introducción"
+          ],
+          "segundos": 9.5,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p26",
+          "tipo": "coloquial",
+          "pregunta": "¿Qué número lleva la primera versión de un plano que ya está lista para construir?",
+          "respuesta": "La primera versión lista para construir lleva el número **0**. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-PRO-04 Control documental de proyectos > Numeración de revisiones",
+            "PR-SEG-03 Bloqueo y etiquetado de energías > Retiro de un candado olvidado",
+            "PR-INV-02 Conteo cíclico de inventario > Introducción",
+            "PR-INV-01 Política de inventario de repuestos > Introducción"
+          ],
+          "segundos": 11.3,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p27",
+          "tipo": "coloquial",
+          "pregunta": "¿Qué se revisa si el análisis del lubricante sale con mucho polvo?",
+          "respuesta": "Se revisa el sistema de admisión de aire antes de la siguiente PM1. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Muestras de aceite",
+            "PR-INV-01 Política de inventario de repuestos > Política de reposición",
+            "PR-PRO-04 Control documental de proyectos > Revisión y plazos",
+            "PR-OPE-01 Reporte de producción de la mina > Reporte de turno"
+          ],
+          "segundos": 15.0,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p28",
+          "tipo": "trampa",
+          "pregunta": "¿Cuál es el procedimiento para recibir explosivos en la faena?",
+          "respuesta": "El procedimiento para recibir explosivos se encuentra en PR‑EXP‑01. [2]",
+          "correcta": false,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Introducción",
+            "PR-BOD-01 Recepción de materiales en bodega central > Alcance",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Inducción",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Acreditación"
+          ],
+          "segundos": 15.9,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p29",
+          "tipo": "trampa",
+          "pregunta": "¿Cuántos días de vacaciones al año tiene el personal de la faena?",
+          "respuesta": "No está en los documentos.",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-COM-03 Contratación de servicios > Alcance",
+            "PR-RRHH-02 Turnos, traslados y viáticos > Sistemas de turno",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Inducción",
+            "PR-RRHH-02 Turnos, traslados y viáticos > Traslados"
+          ],
+          "segundos": 7.2
+        },
+        {
+          "id": "p30",
+          "tipo": "trampa",
+          "pregunta": "¿Cuál es la velocidad máxima de los camiones en los caminos de la mina?",
+          "respuesta": "No está en los documentos.",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-OPE-01 Reporte de producción de la mina > Indicadores",
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Introducción",
+            "PR-OPE-01 Reporte de producción de la mina > Reporte de turno",
+            "PR-OPE-01 Reporte de producción de la mina > Desviaciones"
+          ],
+          "segundos": 7.1
+        },
+        {
+          "id": "p31",
+          "tipo": "trampa casi",
+          "pregunta": "¿Cuánto es el viático diario por un viaje de trabajo al extranjero?",
+          "respuesta": "No está en los documentos.",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-RRHH-02 Turnos, traslados y viáticos > Viáticos",
+            "PR-SEG-05 Trabajo en altura > Requisitos",
+            "PR-SEG-05 Trabajo en altura > Alcance",
+            "PR-MAN-05 Gestión de neumáticos de camiones de extracción > Inspección"
+          ],
+          "segundos": 7.8
+        },
+        {
+          "id": "p32",
+          "tipo": "trampa casi",
+          "pregunta": "¿A qué hora sale el bus de regreso desde la faena a Calama?",
+          "respuesta": "No está en los documentos.",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-RRHH-02 Turnos, traslados y viáticos > Traslados",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Introducción",
+            "PR-RRHH-02 Turnos, traslados y viáticos > Introducción",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Inducción"
+          ],
+          "segundos": 10.6
+        },
+        {
+          "id": "p33",
+          "tipo": "trampa casi",
+          "pregunta": "¿Cuántos días hábiles tiene el contratista para corregir un documento que volvió con código 2?",
+          "respuesta": "No está en los documentos.",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-PRO-04 Control documental de proyectos > Revisión y plazos",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Acreditación",
+            "PR-PRO-02 Control de cambios en proyectos de capital > Plazos",
+            "PR-COM-03 Contratación de servicios > Garantías"
+          ],
+          "segundos": 10.8
+        },
+        {
+          "id": "p34",
+          "tipo": "trampa casi",
+          "pregunta": "¿Qué multa se le cobra a un proveedor que llega a la bodega central fuera del horario de recepción?",
+          "respuesta": "No está en los documentos.",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-BOD-01 Recepción de materiales en bodega central > Horario de recepción",
+            "PR-BOD-01 Recepción de materiales en bodega central > Diferencias en la recepción",
+            "PR-BOD-02 Despacho de materiales desde bodega > Horario de despacho",
+            "PR-BOD-01 Recepción de materiales en bodega central > Alcance"
+          ],
+          "segundos": 10.4
+        },
+        {
+          "id": "p35",
+          "tipo": "parecida",
+          "pregunta": "¿Quién aprueba un contrato de servicio de aseo por USD 120.000?",
+          "respuesta": "El contrato de servicio de aseo por USD 120.000 debe ser aprobado por el Superintendente del área. [1]",
+          "correcta": true,
+          "valida": false,
+          "problemas": [
+            "cifras que no aparecen en las fuentes citadas: ['120000']"
+          ],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-COM-03 Contratación de servicios > Niveles de aprobación",
+            "PR-COM-03 Contratación de servicios > Garantías",
+            "PR-INV-02 Conteo cíclico de inventario > Ajustes",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Niveles de aprobación"
+          ],
+          "segundos": 26.0,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p36",
+          "tipo": "parecida",
+          "pregunta": "¿Cuál es la meta de disponibilidad física de las palas?",
+          "respuesta": "La meta de disponibilidad física de las palas es del 92 % [1].",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-MAN-03 Mantención preventiva de palas eléctricas > Indicadores",
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Indicadores",
+            "PR-MAN-03 Mantención preventiva de palas eléctricas > Tolerancia",
+            "PR-MAN-03 Mantención preventiva de palas eléctricas > Alcance"
+          ],
+          "segundos": 9.2,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p37",
+          "tipo": "parecida",
+          "pregunta": "¿Cuánto se puede atrasar una pauta de mantención de las palas sin pedir autorización?",
+          "respuesta": "Se puede atrasar hasta un 5 % de su intervalo sin autorización. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-MAN-03 Mantención preventiva de palas eléctricas > Tolerancia",
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Tolerancia",
+            "PR-MAN-03 Mantención preventiva de palas eléctricas > Pautas",
+            "PR-MAN-03 Mantención preventiva de palas eléctricas > Introducción"
+          ],
+          "segundos": 10.4,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p38",
+          "tipo": "parecida",
+          "pregunta": "¿Cada cuánto se renueva el curso de trabajo en altura?",
+          "respuesta": "El curso de trabajo en altura se renueva cada 3 años. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-SEG-05 Trabajo en altura > Requisitos",
+            "PR-SEG-03 Bloqueo y etiquetado de energías > Capacitación",
+            "PR-SEG-05 Trabajo en altura > Alcance",
+            "PR-SEG-05 Trabajo en altura > Rescate"
+          ],
+          "segundos": 9.9,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p39",
+          "tipo": "parecida",
+          "pregunta": "¿Hasta qué hora puedo retirar materiales de la bodega central?",
+          "respuesta": "Puedes retirar materiales de la bodega central hasta las 23:00, de lunes a domingo. [2]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-BOD-01 Recepción de materiales en bodega central > Introducción",
+            "PR-BOD-02 Despacho de materiales desde bodega > Horario de despacho",
+            "PR-BOD-01 Recepción de materiales en bodega central > Diferencias en la recepción",
+            "PR-BOD-01 Recepción de materiales en bodega central > Horario de recepción"
+          ],
+          "segundos": 11.4,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p40",
+          "tipo": "parecida",
+          "pregunta": "¿Qué diferencia obliga a hacer un segundo conteo de un repuesto clase A?",
+          "respuesta": "La diferencia con el ERP debe superar el 1 % en un repuesto clase A. [3]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-INV-02 Conteo cíclico de inventario > Frecuencia",
+            "PR-INV-01 Política de inventario de repuestos > Inventario obsoleto",
+            "PR-INV-02 Conteo cíclico de inventario > Cómo se cuenta",
+            "PR-INV-01 Política de inventario de repuestos > Clasificación ABC"
+          ],
+          "segundos": 11.7,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p41",
+          "tipo": "parecida",
+          "pregunta": "¿Qué porcentaje pesa la parte técnica al evaluar las ofertas de una licitación de servicios?",
+          "respuesta": "El 60 % del puntaje total corresponde a la parte técnica al evaluar las ofertas de una licitación de servicios. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-COM-03 Contratación de servicios > Licitación",
+            "PR-COM-03 Contratación de servicios > Evaluación de desempeño",
+            "PR-MAN-07 Análisis de causa raíz de fallas > Indicador",
+            "PR-PRO-04 Control documental de proyectos > Indicadores"
+          ],
+          "segundos": 10.2,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p42",
+          "tipo": "parecida",
+          "pregunta": "¿De qué color es el casco de los trabajadores contratistas?",
+          "respuesta": "El casco de los trabajadores contratistas es de color naranja. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-SEG-09 Elementos de protección personal > Color del casco",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Introducción",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Credencial",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Acreditación"
+          ],
+          "segundos": 9.6,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p43",
+          "tipo": "parecida",
+          "pregunta": "¿Cuánto dura la inducción de faena de un trabajador contratista?",
+          "respuesta": "La inducción de faena dura 8 horas. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Inducción",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Acreditación",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Credencial",
+            "PR-COM-03 Contratación de servicios > Garantías"
+          ],
+          "segundos": 10.1,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p44",
+          "tipo": "parecida",
+          "pregunta": "¿Qué diferencia de volumen se acepta al recibir una cisterna de diésel?",
+          "respuesta": "Se acepta una diferencia de volumen de hasta el 0,5 % al recibir una cisterna de diésel. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-COM-02 Recepción y control de combustibles > Control al recibir",
+            "PR-COM-02 Recepción y control de combustibles > Alcance",
+            "PR-COM-02 Recepción y control de combustibles > Horario",
+            "PR-COM-02 Recepción y control de combustibles > Inventario de combustible"
+          ],
+          "segundos": 10.9,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p45",
+          "tipo": "parecida",
+          "pregunta": "¿Cada cuánto se evalúa el desempeño de un contratista de servicios?",
+          "respuesta": "El desempeño de un contratista de servicios se evalúa cada 3 meses. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-COM-03 Contratación de servicios > Evaluación de desempeño",
+            "PR-COM-03 Contratación de servicios > Garantías",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Acreditación",
+            "PR-COM-03 Contratación de servicios > Licitación"
+          ],
+          "segundos": 10.9,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p46",
+          "tipo": "parecida",
+          "pregunta": "¿Cada cuánto se cuentan los repuestos clase B?",
+          "respuesta": "Los repuestos de clase B se cuentan cada 3 meses. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-INV-02 Conteo cíclico de inventario > Frecuencia",
+            "PR-INV-01 Política de inventario de repuestos > Clasificación ABC",
+            "PR-INV-01 Política de inventario de repuestos > Política de reposición",
+            "PR-BOD-01 Recepción de materiales en bodega central > Materiales críticos"
+          ],
+          "segundos": 8.7,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p47",
+          "tipo": "versión",
+          "pregunta": "¿Quién aprueba una solicitud de compra de USD 150.000?",
+          "respuesta": "La solicitud de compra de USD 150.000 debe ser aprobada por el Gerente de operaciones. [3]",
+          "correcta": true,
+          "valida": false,
+          "problemas": [
+            "cifras que no aparecen en las fuentes citadas: ['150000']"
+          ],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-COM-01 Solicitud de compra y aprobaciones > Compras de emergencia",
+            "PR-COM-03 Contratación de servicios > Niveles de aprobación",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Niveles de aprobación",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Cotizaciones"
+          ],
+          "segundos": 27.4,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p48",
+          "tipo": "versión",
+          "pregunta": "¿Quién aprueba una solicitud de compra de USD 30.000?",
+          "respuesta": "El superintendente del área aprueba una solicitud de compra de USD 30 000. [2]",
+          "correcta": true,
+          "valida": false,
+          "problemas": [
+            "cifras que no aparecen en las fuentes citadas: ['30000']"
+          ],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-COM-01 Solicitud de compra y aprobaciones > Compras de emergencia",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Niveles de aprobación",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Cotizaciones",
+            "PR-COM-03 Contratación de servicios > Niveles de aprobación"
+          ],
+          "segundos": 29.6,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p49",
+          "tipo": "versión",
+          "pregunta": "¿Desde qué monto se piden tres cotizaciones para una compra?",
+          "respuesta": "Se piden al menos tres cotizaciones cuando la compra supera los USD 10.000. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-COM-01 Solicitud de compra y aprobaciones > Cotizaciones",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Niveles de aprobación",
+            "PR-COM-03 Contratación de servicios > Niveles de aprobación",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Introducción"
+          ],
+          "segundos": 10.2,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p50",
+          "tipo": "directa",
+          "pregunta": "¿Qué tasa de descuento se usa para evaluar un proyecto de inversión?",
+          "respuesta": "Se utiliza una tasa de descuento real del 8 % anual. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-PRO-06 Evaluación económica de proyectos de inversión > Supuestos obligatorios",
+            "PR-PRO-06 Evaluación económica de proyectos de inversión > Cuándo se exige",
+            "PR-PRO-06 Evaluación económica de proyectos de inversión > Sensibilidad",
+            "PR-PRO-06 Evaluación económica de proyectos de inversión > Indicadores"
+          ],
+          "segundos": 9.4,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p51",
+          "tipo": "directa",
+          "pregunta": "¿Qué boleta de garantía entrega un contratista y por qué porcentaje del contrato?",
+          "respuesta": "El contratista entrega una boleta de garantía de fiel cumplimiento por el 10 % del valor del contrato. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-COM-03 Contratación de servicios > Garantías",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Credencial",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Acreditación",
+            "PR-COM-03 Contratación de servicios > Evaluación de desempeño"
+          ],
+          "segundos": 10.8,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p52",
+          "tipo": "directa",
+          "pregunta": "¿A qué presión se inflan los neumáticos de los camiones de extracción?",
+          "respuesta": "Los neumáticos de los camiones de extracción se inflan a una presión de trabajo de 100 psi en frío, con una tolerancia de ±5 psi [1].",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-MAN-05 Gestión de neumáticos de camiones de extracción > Inspección",
+            "PR-MAN-05 Gestión de neumáticos de camiones de extracción > Indicadores",
+            "PR-MAN-05 Gestión de neumáticos de camiones de extracción > Seguridad",
+            "PR-MAN-05 Gestión de neumáticos de camiones de extracción > Introducción"
+          ],
+          "segundos": 11.2,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p53",
+          "tipo": "directa",
+          "pregunta": "¿Quién aprueba un ajuste de inventario de USD 8.000?",
+          "respuesta": "El controller de la faena aprueba ajustes de inventario superiores a USD 5.000. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-INV-02 Conteo cíclico de inventario > Ajustes",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Niveles de aprobación",
+            "PR-COM-03 Contratación de servicios > Niveles de aprobación",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Cotizaciones"
+          ],
+          "segundos": 32.3,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p54",
+          "tipo": "directa",
+          "pregunta": "¿Cuánto tiempo puede quedar como máximo un residuo peligroso en el patio?",
+          "respuesta": "Un residuo peligroso no puede quedar más de 6 meses en el patio. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-AMB-01 Manejo de residuos peligrosos > Almacenamiento",
+            "PR-AMB-01 Manejo de residuos peligrosos > Qué es un residuo peligroso",
+            "PR-AMB-01 Manejo de residuos peligrosos > Retiro",
+            "PR-AMB-01 Manejo de residuos peligrosos > Introducción"
+          ],
+          "segundos": 10.7,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p55",
+          "tipo": "directa",
+          "pregunta": "¿Cuándo se cambian los dientes del balde de una pala?",
+          "respuesta": "Los dientes del balde de una pala se cambian cuando su largo baja del 60 % del largo original, y se sustituyen todos los dientes a la vez, nunca uno solo. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-MAN-03 Mantención preventiva de palas eléctricas > Dientes del balde",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Compras de emergencia",
+            "PR-MAN-03 Mantención preventiva de palas eléctricas > Pautas",
+            "PR-MAN-07 Análisis de causa raíz de fallas > Cuándo se hace"
+          ],
+          "segundos": 12.0,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p56",
+          "tipo": "directa",
+          "pregunta": "¿Con cuánta anticipación sube sus documentos una empresa contratista para acreditar a un trabajador?",
+          "respuesta": "La empresa contratista sube los documentos con al menos 5 días hábiles de anticipación. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Acreditación",
+            "PR-PRO-04 Control documental de proyectos > Alcance",
+            "PR-SEG-09 Elementos de protección personal > Fiscalización",
+            "PR-COM-03 Contratación de servicios > Garantías"
+          ],
+          "segundos": 11.6,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p57",
+          "tipo": "directa",
+          "pregunta": "¿Cuál es la meta de espera de los camiones en la pala?",
+          "respuesta": "La meta de espera de los camiones en la pala es **menos de 4 minutos** [4].",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Indicadores",
+            "PR-MAN-05 Gestión de neumáticos de camiones de extracción > Indicadores",
+            "PR-MAN-03 Mantención preventiva de palas eléctricas > Indicadores",
+            "PR-OPE-01 Reporte de producción de la mina > Indicadores"
+          ],
+          "segundos": 9.2,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p58",
+          "tipo": "directa",
+          "pregunta": "¿Qué elementos de protección personal son obligatorios en la faena?",
+          "respuesta": "En la faena, fuera de oficinas y comedores, son obligatorios el casco, los lentes de seguridad, los zapatos de seguridad y el chaleco reflectante, y la protección auditiva cuando el ruido supera 85 dB [1].",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-SEG-09 Elementos de protección personal > EPP básico",
+            "PR-SEG-09 Elementos de protección personal > Introducción",
+            "PR-SEG-09 Elementos de protección personal > Reposición",
+            "PR-SEG-09 Elementos de protección personal > Fiscalización"
+          ],
+          "segundos": 13.6,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p59",
+          "tipo": "directa",
+          "pregunta": "¿Cómo se clasifica un proyecto cuyo VAN cambia de signo si la inversión sube 10 %?",
+          "respuesta": "Se clasifica como proyecto de riesgo alto, ya que el VAN cambia de signo con una variación del 10 % en la inversión. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-PRO-06 Evaluación económica de proyectos de inversión > Sensibilidad",
+            "PR-PRO-06 Evaluación económica de proyectos de inversión > Indicadores",
+            "PR-PRO-06 Evaluación económica de proyectos de inversión > Cuándo se exige",
+            "PR-PRO-06 Evaluación económica de proyectos de inversión > Supuestos obligatorios"
+          ],
+          "segundos": 10.3,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p60",
+          "tipo": "coloquial",
+          "pregunta": "Al camión 14 se le cortó la misma manguera tres veces en dos meses, ¿hay que hacer algo especial?",
+          "respuesta": "No está en los documentos.",
+          "correcta": false,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": false,
+          "fuentes": [
+            "PR-MAN-05 Gestión de neumáticos de camiones de extracción > Seguridad",
+            "PR-MAN-05 Gestión de neumáticos de camiones de extracción > Retiro",
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Indicadores",
+            "PR-INV-02 Conteo cíclico de inventario > Frecuencia"
+          ],
+          "segundos": 8.9
+        },
+        {
+          "id": "p61",
+          "tipo": "coloquial",
+          "pregunta": "Casi se nos cae una carga del puente grúa y pudo matar a alguien, ¿en cuánto tiempo hay que investigarlo?",
+          "respuesta": "En caso de un incidente de alto potencial, como el que casi causa una fatalidad, debe investigarse y clasificarse en las 24 horas siguientes. [3]",
+          "correcta": false,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": false,
+          "fuentes": [
+            "PR-SEG-07 Reporte e investigación de incidentes > Qué se reporta",
+            "PR-MAN-07 Análisis de causa raíz de fallas > Indicador",
+            "PR-SEG-07 Reporte e investigación de incidentes > Clasificación",
+            "PR-OPE-01 Reporte de producción de la mina > Indicadores"
+          ],
+          "segundos": 14.0,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p62",
+          "tipo": "coloquial",
+          "pregunta": "Me sobró material de una pega, ¿hasta cuándo lo puedo devolver a la bodega?",
+          "respuesta": "Puedes devolverlo en un plazo de 5 días hábiles, en su embalaje original. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-BOD-02 Despacho de materiales desde bodega > Devoluciones",
+            "PR-BOD-01 Recepción de materiales en bodega central > Pasos",
+            "PR-BOD-01 Recepción de materiales en bodega central > Diferencias en la recepción",
+            "PR-BOD-01 Recepción de materiales en bodega central > Horario de recepción"
+          ],
+          "segundos": 14.9,
+          "fidelidad": null
+        },
+        {
+          "id": "p63",
+          "tipo": "coloquial",
+          "pregunta": "¿Dónde dejo el aceite usado después de una mantención?",
+          "respuesta": "No está en los documentos.",
+          "correcta": false,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": false,
+          "fuentes": [
+            "PR-AMB-01 Manejo de residuos peligrosos > Qué es un residuo peligroso",
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Muestras de aceite",
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Introducción",
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Tolerancia"
+          ],
+          "segundos": 10.5
+        },
+        {
+          "id": "p64",
+          "tipo": "coloquial",
+          "pregunta": "Un neumático tiene un tajo donde se ven las lonas, ¿lo puedo seguir usando?",
+          "respuesta": "No, no se puede seguir usando. Un neumático se retira cuando tiene un corte que deja las lonas a la vista. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-MAN-05 Gestión de neumáticos de camiones de extracción > Retiro",
+            "PR-MAN-05 Gestión de neumáticos de camiones de extracción > Seguridad",
+            "PR-BOD-01 Recepción de materiales en bodega central > Diferencias en la recepción",
+            "PR-BOD-02 Despacho de materiales desde bodega > Cómo se retira"
+          ],
+          "segundos": 11.2,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p65",
+          "tipo": "coloquial",
+          "pregunta": "¿Puedo pagar con la caja chica una compra de 80 lucas?",
+          "respuesta": "No está en los documentos.",
+          "correcta": false,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": false,
+          "fuentes": [
+            "PR-COM-01 Solicitud de compra y aprobaciones > Compras de emergencia",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Cotizaciones",
+            "PR-INV-01 Política de inventario de repuestos > Clasificación ABC",
+            "PR-BOD-01 Recepción de materiales en bodega central > Alcance"
+          ],
+          "segundos": 11.5
+        },
+        {
+          "id": "p66",
+          "tipo": "coloquial",
+          "pregunta": "¿El jefe de turno puede corregir las toneladas que quedaron mal en el despacho?",
+          "respuesta": "No. El jefe de turno solo revisa y firma el reporte de turno, pero la corrección de datos en el sistema de despacho la realiza únicamente el analista de despacho [1][4].",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-OPE-01 Reporte de producción de la mina > Reporte de turno",
+            "PR-OPE-01 Reporte de producción de la mina > Indicadores",
+            "PR-BOD-02 Despacho de materiales desde bodega > Horario de despacho",
+            "PR-OPE-01 Reporte de producción de la mina > Correcciones"
+          ],
+          "segundos": 15.3,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p67",
+          "tipo": "coloquial",
+          "pregunta": "Si un cambio atrasa el proyecto 45 días, ¿quién tiene que aprobarlo?",
+          "respuesta": "El cambio debe ser aprobado por el Comité de inversiones. [3]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-PRO-02 Control de cambios en proyectos de capital > Qué es un cambio",
+            "PR-PRO-02 Control de cambios en proyectos de capital > Plazos",
+            "PR-PRO-02 Control de cambios en proyectos de capital > Quién aprueba",
+            "PR-PRO-06 Evaluación económica de proyectos de inversión > Cuándo se exige"
+          ],
+          "segundos": 9.6,
+          "fidelidad": 0.0
+        },
+        {
+          "id": "p68",
+          "tipo": "coloquial",
+          "pregunta": "Si alguien queda colgado del arnés, ¿en cuánto tiempo hay que poder sacarlo?",
+          "respuesta": "El rescate debe poder hacerse en menos de 15 minutos. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-SEG-05 Trabajo en altura > Rescate",
+            "PR-SEG-05 Trabajo en altura > Requisitos",
+            "PR-SEG-03 Bloqueo y etiquetado de energías > Objetivo",
+            "PR-BOD-01 Recepción de materiales en bodega central > Horario de recepción"
+          ],
+          "segundos": 10.4,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p69",
+          "tipo": "coloquial",
+          "pregunta": "Se derramaron 300 litros de petróleo, ¿a quién le aviso?",
+          "respuesta": "Se informa de inmediato al jefe de medio ambiente. [1]",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-AMB-01 Manejo de residuos peligrosos > Derrames",
+            "PR-COM-02 Recepción y control de combustibles > Alcance",
+            "PR-SEG-07 Reporte e investigación de incidentes > Plazos",
+            "PR-AMB-01 Manejo de residuos peligrosos > Almacenamiento"
+          ],
+          "segundos": 11.5,
+          "fidelidad": null
+        },
+        {
+          "id": "p70",
+          "tipo": "trampa casi",
+          "pregunta": "¿Cuántas personas se necesitan como mínimo para armar un andamio?",
+          "respuesta": "No está en los documentos.",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-SEG-05 Trabajo en altura > Andamios",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Introducción",
+            "PR-RRHH-02 Turnos, traslados y viáticos > Introducción",
+            "PR-AMB-01 Manejo de residuos peligrosos > Derrames"
+          ],
+          "segundos": 11.4
+        },
+        {
+          "id": "p71",
+          "tipo": "trampa casi",
+          "pregunta": "¿Cuál es la meta de vida media de los neumáticos de las camionetas?",
+          "respuesta": "No está en los documentos.",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-MAN-05 Gestión de neumáticos de camiones de extracción > Indicadores",
+            "PR-MAN-05 Gestión de neumáticos de camiones de extracción > Rotación",
+            "PR-MAN-05 Gestión de neumáticos de camiones de extracción > Introducción",
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Indicadores"
+          ],
+          "segundos": 8.4
+        },
+        {
+          "id": "p72",
+          "tipo": "trampa casi",
+          "pregunta": "¿De cuánto es el fondo fijo de cada gerencia?",
+          "respuesta": "El fondo fijo de cada gerencia es de CLP 300.000. [1]",
+          "correcta": false,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-FIN-01 Fondos fijos y rendición de gastos > Fondos fijos",
+            "PR-FIN-01 Fondos fijos y rendición de gastos > Reposición del fondo",
+            "PR-BOD-01 Recepción de materiales en bodega central > Diferencias en la recepción",
+            "PR-INV-02 Conteo cíclico de inventario > Frecuencia"
+          ],
+          "segundos": 11.6,
+          "fidelidad": null
+        },
+        {
+          "id": "p73",
+          "tipo": "trampa casi",
+          "pregunta": "¿Cuántos días se demora el laboratorio en entregar el análisis de aceite?",
+          "respuesta": "No está en los documentos.",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Muestras de aceite",
+            "PR-MAN-07 Análisis de causa raíz de fallas > Cuándo se hace",
+            "PR-AMB-01 Manejo de residuos peligrosos > Qué es un residuo peligroso",
+            "PR-MAN-07 Análisis de causa raíz de fallas > Método"
+          ],
+          "segundos": 9.2
+        },
+        {
+          "id": "p74",
+          "tipo": "trampa casi",
+          "pregunta": "¿De qué color es el casco de los practicantes?",
+          "respuesta": "No está en los documentos.",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-SEG-09 Elementos de protección personal > Color del casco",
+            "PR-AMB-01 Manejo de residuos peligrosos > Qué es un residuo peligroso",
+            "PR-SEG-09 Elementos de protección personal > Reposición",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Quién puede solicitar"
+          ],
+          "segundos": 8.2
+        }
+      ]
+    },
+    "v2": {
+      "busqueda": "Híbrido + contexto + reescritura + reordenamiento",
+      "citas_textuales": true,
+      "resumen": {
+        "correctas": 69,
+        "total": 74,
+        "con_respuesta_correctas": 58,
+        "con_respuesta_total": 62,
+        "trampa_rechazadas": 11,
+        "trampa_total": 12,
+        "citan_seccion_correcta": 58,
+        "respuestas_que_no_pasan_validacion": 9,
+        "correctas_por_tipo": {
+          "directa": "26/27",
+          "versión": "5/5",
+          "coloquial": "15/18",
+          "trampa": "3/3",
+          "trampa casi": "8/9",
+          "parecida": "12/12"
+        },
+        "fidelidad_promedio": 0.975,
+        "segundos_promedio": 37.0
+      },
+      "detalle": [
+        {
+          "id": "p01",
+          "tipo": "directa",
+          "pregunta": "¿Quién aprueba una solicitud de compra de USD 80.000?",
+          "respuesta": "El Gerente de operaciones aprueba una solicitud de compra de USD 80.000. [1]\n\n[1] \"Más de USD 50.000 y hasta USD 250.000 | Gerente de operaciones\"",
+          "correcta": true,
+          "valida": false,
+          "problemas": [
+            "cifras que no aparecen en las fuentes citadas: ['80000']"
+          ],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-COM-01 Solicitud de compra y aprobaciones > Niveles de aprobación",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Quién puede solicitar",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Compras de emergencia",
+            "PR-MAN-07 Análisis de causa raíz de fallas > Introducción"
+          ],
+          "segundos": 75.6,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p02",
+          "tipo": "versión",
+          "pregunta": "¿Cuántas cotizaciones necesito para comprar algo de USD 12.000?",
+          "respuesta": "Para una compra de USD 12.000 necesitas al menos tres cotizaciones de proveedores distintos. [1]\n\n[1] \"Compras de más de USD 10.000: se piden al menos tres cotizaciones de proveedores distintos.\"",
+          "correcta": true,
+          "valida": false,
+          "problemas": [
+            "cifras que no aparecen en las fuentes citadas: ['12000']"
+          ],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-COM-01 Solicitud de compra y aprobaciones > Cotizaciones",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Compras de emergencia",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Niveles de aprobación",
+            "PR-COM-03 Contratación de servicios > Niveles de aprobación"
+          ],
+          "segundos": 63.1,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p03",
+          "tipo": "versión",
+          "pregunta": "Se cortó una pala por una falla, ¿hasta qué monto se puede comprar de emergencia y en cuánto tiempo hay que regularizar la SolPed?",
+          "respuesta": "Se puede autorizar una compra de emergencia de hasta USD 30.000 y la SolPed debe regularizarse en el ERP en un plazo máximo de 48 horas. [1]\n\n[1] \"Si una falla detiene una pala, un camión o el chancador, el superintendente de mantención puede autorizar por teléfono una compra de emergencia de hasta USD 30.000. La SolPed se regulariza en el ERP en un plazo máximo de 48 horas.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-COM-01 Solicitud de compra y aprobaciones > Compras de emergencia",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Niveles de aprobación",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Cotizaciones",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Quién puede solicitar"
+          ],
+          "segundos": 40.6,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p04",
+          "tipo": "directa",
+          "pregunta": "¿Qué hago si llegan menos unidades de las que dice la orden de compra?",
+          "respuesta": "Si la cantidad recibida difiere de la OC en más de un 2 %, el bodeguero no registra la recepción y avisa al comprador por correo el mismo día. [2]\n\n[2] \"Si la cantidad recibida difiere de la OC en más de un 2 %, el bodeguero no registra la recepción y avisa al comprador por correo el mismo día.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-BOD-01 Recepción de materiales en bodega central > Pasos",
+            "PR-BOD-01 Recepción de materiales en bodega central > Diferencias en la recepción",
+            "PR-BOD-01 Recepción de materiales en bodega central > Horario de recepción",
+            "PR-BOD-02 Despacho de materiales desde bodega > Cómo se retira"
+          ],
+          "segundos": 36.9,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p05",
+          "tipo": "directa",
+          "pregunta": "¿Dónde se deja el material que llega dañado y cuánto tiempo puede quedar ahí?",
+          "respuesta": "El material dañado se deja en la zona de cuarentena (zona Q, al fondo del galpón 2) [1] y puede permanecer allí hasta 10 días hábiles [1].\n\n[1] \"El material dañado se deja en la zona de cuarentena (zona Q, al fondo del galpón 2), con una etiqueta roja que indica la OC y el motivo.\"  \n[1] \"El material en cuarentena tiene un plazo de 10 días hábiles para ser devuelto al proveedor o aceptado con una nota de crédito. Pasado ese plazo, el jefe de bodega decide su destino.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-BOD-01 Recepción de materiales en bodega central > Diferencias en la recepción",
+            "PR-BOD-02 Despacho de materiales desde bodega > Cómo se retira",
+            "PR-BOD-01 Recepción de materiales en bodega central > Pasos",
+            "PR-BOD-02 Despacho de materiales desde bodega > Devoluciones"
+          ],
+          "segundos": 65.2,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p06",
+          "tipo": "directa",
+          "pregunta": "¿A qué hora cierra la recepción de la bodega central?",
+          "respuesta": "La recepción de la bodega central cierra a las 17:00. [1]\n\n[1] \"La bodega central recibe camiones de lunes a sábado, de 08:00 a 17:00.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-BOD-01 Recepción de materiales en bodega central > Horario de recepción",
+            "PR-BOD-01 Recepción de materiales en bodega central > Introducción",
+            "PR-BOD-01 Recepción de materiales en bodega central > Diferencias en la recepción",
+            "PR-BOD-01 Recepción de materiales en bodega central > Alcance"
+          ],
+          "segundos": 29.3,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p07",
+          "tipo": "directa",
+          "pregunta": "¿Cada cuántas horas se cambia el aceite del motor de los camiones?",
+          "respuesta": "El aceite del motor de los camiones se cambia cada 500 horas. [1]\n\n[1] \"PM2: cambio de aceite de motor y filtros | 500 horas | 10 horas\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Pautas por horas de operación",
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Tolerancia",
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Muestras de aceite",
+            "PR-MAN-03 Mantención preventiva de palas eléctricas > Pautas"
+          ],
+          "segundos": 32.5,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p08",
+          "tipo": "directa",
+          "pregunta": "¿Cuál es la meta de disponibilidad física de la flota de camiones?",
+          "respuesta": "La meta de disponibilidad física de la flota de camiones es del 88 %.[1]\n\n[1] \"Disponibilidad física de la flota de camiones: meta de 88 %.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Indicadores",
+            "PR-MAN-03 Mantención preventiva de palas eléctricas > Indicadores",
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Introducción",
+            "PR-MAN-05 Gestión de neumáticos de camiones de extracción > Indicadores"
+          ],
+          "segundos": 29.3,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p09",
+          "tipo": "directa",
+          "pregunta": "¿Hasta cuántas horas puedo atrasar la PM2 sin pedir autorización?",
+          "respuesta": "Puedes atrasar la PM2 hasta 10 horas sin pedir autorización. [1]\n\n[1] \"Una pauta se puede adelantar o atrasar como máximo un 10 % de su intervalo (por ejemplo, la PM2 entre las 450 y las 550 horas). Atrasarla más requiere autorización escrita del superintendente de mantención.\"",
+          "correcta": false,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Tolerancia",
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Pautas por horas de operación",
+            "PR-PRO-02 Control de cambios en proyectos de capital > Quién aprueba",
+            "PR-MAN-03 Mantención preventiva de palas eléctricas > Tolerancia"
+          ],
+          "segundos": 40.8,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p10",
+          "tipo": "directa",
+          "pregunta": "¿Qué nivel de servicio tienen los repuestos clase B?",
+          "respuesta": "Los repuestos clase B tienen un nivel de servicio objetivo del 95 %.  \n\n[1] \"95 %\"",
+          "correcta": true,
+          "valida": false,
+          "problemas": [
+            "la respuesta no cita ninguna fuente",
+            "cifras que no aparecen en las fuentes citadas: ['95']",
+            "la frase de [1] es demasiado corta para comprobarla: \"95 %\""
+          ],
+          "cita_seccion_correcta": false,
+          "fuentes": [
+            "PR-INV-01 Política de inventario de repuestos > Política de reposición",
+            "PR-INV-01 Política de inventario de repuestos > Clasificación ABC",
+            "PR-INV-02 Conteo cíclico de inventario > Frecuencia",
+            "PR-INV-02 Conteo cíclico de inventario > Cómo se cuenta"
+          ],
+          "segundos": 42.6,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p11",
+          "tipo": "directa",
+          "pregunta": "¿Cómo se calcula el stock de seguridad?",
+          "respuesta": "El stock de seguridad se calcula como z · σ · √(L + R), donde σ es la desviación estándar de la demanda semanal, L el plazo del proveedor en semanas y z el factor del nivel de servicio. [1]\n\n[1] \"El stock de seguridad se calcula como z · σ · √(L + R), donde σ es la desviación estándar de la demanda semanal, L el plazo del proveedor en semanas y z el factor del nivel de servicio.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-INV-01 Política de inventario de repuestos > Política de reposición",
+            "PR-COM-02 Recepción y control de combustibles > Inventario de combustible",
+            "PR-SEG-07 Reporte e investigación de incidentes > Introducción",
+            "PR-SEG-07 Reporte e investigación de incidentes > Lecciones aprendidas"
+          ],
+          "segundos": 52.7,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p12",
+          "tipo": "directa",
+          "pregunta": "¿Cuándo se considera obsoleto un repuesto?",
+          "respuesta": "Un repuesto sin movimiento en 24 meses se marca como obsoleto. [1]\n\n[1] \"Un repuesto sin movimiento en 24 meses se marca como obsoleto.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-INV-01 Política de inventario de repuestos > Inventario obsoleto",
+            "PR-INV-01 Política de inventario de repuestos > Clasificación ABC",
+            "PR-INV-01 Política de inventario de repuestos > Política de reposición",
+            "PR-INV-01 Política de inventario de repuestos > Introducción"
+          ],
+          "segundos": 29.7,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p13",
+          "tipo": "directa",
+          "pregunta": "Un compañero dejó su candado puesto y ya se fue de la faena, ¿quién puede autorizar cortarlo?",
+          "respuesta": "Solo el superintendente del área puede autorizar el corte. [1]\n\n[1] \"Si el dueño de un candado no está en la faena, solo el superintendente del área puede autorizar el corte, después de confirmar por teléfono con esa persona que no está en el equipo y de inspeccionar el equipo en terreno. El corte se registra en el formulario F-SEG-12.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-SEG-03 Bloqueo y etiquetado de energías > Retiro de un candado olvidado",
+            "PR-SEG-03 Bloqueo y etiquetado de energías > Reglas básicas",
+            "PR-RRHH-02 Turnos, traslados y viáticos > Introducción",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Acreditación"
+          ],
+          "segundos": 38.5,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p14",
+          "tipo": "directa",
+          "pregunta": "¿De qué color son los candados personales de bloqueo?",
+          "respuesta": "Los candados personales de bloqueo son rojos. [1]\n\n[1] \"Los candados personales son rojos y tienen una sola llave, que guarda su dueño.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-SEG-03 Bloqueo y etiquetado de energías > Reglas básicas",
+            "PR-SEG-09 Elementos de protección personal > Color del casco",
+            "PR-SEG-03 Bloqueo y etiquetado de energías > Capacitación",
+            "PR-SEG-03 Bloqueo y etiquetado de energías > Retiro de un candado olvidado"
+          ],
+          "segundos": 28.5,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p15",
+          "tipo": "directa",
+          "pregunta": "¿Cada cuánto se renueva el curso de bloqueo?",
+          "respuesta": "El curso de bloqueo se renueva cada 2 años. [1]\n\n[1] \"Todo trabajador que bloquee equipos debe tener el curso de bloqueo vigente. El curso dura 8 horas y se renueva cada 2 años.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-SEG-03 Bloqueo y etiquetado de energías > Capacitación",
+            "PR-SEG-03 Bloqueo y etiquetado de energías > Retiro de un candado olvidado",
+            "PR-SEG-03 Bloqueo y etiquetado de energías > Pasos",
+            "PR-SEG-03 Bloqueo y etiquetado de energías > Reglas básicas"
+          ],
+          "segundos": 35.0,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p16",
+          "tipo": "directa",
+          "pregunta": "¿Cuántos días tiene el área técnica para revisar un plano que entregó un contratista?",
+          "respuesta": "El área técnica tiene 10 días hábiles para revisar el plano. [1]\n\n[1] \"El plazo de revisión es de 10 días hábiles desde que se registra el transmittal.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-PRO-04 Control documental de proyectos > Revisión y plazos",
+            "PR-PRO-04 Control documental de proyectos > Alcance",
+            "PR-PRO-04 Control documental de proyectos > Indicadores",
+            "PR-BOD-02 Despacho de materiales desde bodega > Repuestos reparables"
+          ],
+          "segundos": 31.7,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p17",
+          "tipo": "directa",
+          "pregunta": "¿Qué significa que un documento vuelva con código 3?",
+          "respuesta": "Un documento con código 3 significa que ha sido rechazado. [1]\n\n[1] \"El área técnica revisa cada documento y lo devuelve con uno de tres códigos: **1** aprobado, **2** aprobado con comentarios, **3** rechazado.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-PRO-04 Control documental de proyectos > Revisión y plazos",
+            "PR-BOD-01 Recepción de materiales en bodega central > Introducción",
+            "PR-BOD-01 Recepción de materiales en bodega central > Pasos",
+            "PR-BOD-02 Despacho de materiales desde bodega > Cómo se retira"
+          ],
+          "segundos": 31.5,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p18",
+          "tipo": "directa",
+          "pregunta": "¿Cuánto es el viático diario por un viaje de trabajo a Santiago?",
+          "respuesta": "El viático diario por un viaje de trabajo a Santiago es de CLP 45.000. [1]\n\n[1] \"Viaje de trabajo a Santiago: viático diario de CLP 45.000.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-RRHH-02 Turnos, traslados y viáticos > Viáticos",
+            "PR-FIN-01 Fondos fijos y rendición de gastos > Viáticos",
+            "PR-RRHH-02 Turnos, traslados y viáticos > Introducción",
+            "PR-BOD-02 Despacho de materiales desde bodega > Cómo se retira"
+          ],
+          "segundos": 32.0,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p19",
+          "tipo": "directa",
+          "pregunta": "¿A qué hora sale el bus a la faena desde Calama?",
+          "respuesta": "El bus sale a las 06:00 desde el terminal de la empresa en Calama. [1]\n\n[1] \"La empresa traslada al personal en bus desde Calama hasta la faena al inicio y al fin de cada turno. El bus sale a las 06:00 desde el terminal de la empresa en Calama.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-RRHH-02 Turnos, traslados y viáticos > Traslados",
+            "PR-RRHH-02 Turnos, traslados y viáticos > Introducción",
+            "PR-COM-03 Contratación de servicios > Alcance",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Introducción"
+          ],
+          "segundos": 43.3,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p20",
+          "tipo": "coloquial",
+          "pregunta": "¿Quién me da el visto bueno para gastar 3 mil dólares en herramientas?",
+          "respuesta": "El jefe del área solicitante. [1]\n\n[1] \"Hasta USD 5.000 | Jefe del área solicitante\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-COM-01 Solicitud de compra y aprobaciones > Niveles de aprobación",
+            "PR-COM-03 Contratación de servicios > Niveles de aprobación",
+            "PR-COM-03 Contratación de servicios > Introducción",
+            "PR-COM-02 Recepción y control de combustibles > Horario"
+          ],
+          "segundos": 38.8,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p21",
+          "tipo": "coloquial",
+          "pregunta": "¿Cada cuánto le cambian el lubricante al motor de los camiones grandes?",
+          "respuesta": "Cada 500 horas de operación. [1]\n\n[1] \"PM2: cambio de aceite de motor y filtros 500 horas 10 horas\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Pautas por horas de operación",
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Tolerancia",
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Muestras de aceite",
+            "PR-MAN-05 Gestión de neumáticos de camiones de extracción > Seguridad"
+          ],
+          "segundos": 42.6,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p22",
+          "tipo": "coloquial",
+          "pregunta": "Tengo una pieza que lleva dos años sin moverse en el almacén, ¿qué pasa con ella?",
+          "respuesta": "Se marcará como obsoleto y el comité de criticidad decidirá en un plazo de 3 meses si se mantiene, se vende o se da de baja. [1]\n\n[1] \"Un repuesto sin movimiento en 24 meses se marca como obsoleto. El comité de criticidad decide en un plazo de 3 meses si se mantiene, se vende o se da de baja.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-INV-01 Política de inventario de repuestos > Inventario obsoleto",
+            "PR-INV-02 Conteo cíclico de inventario > Frecuencia",
+            "PR-INV-02 Conteo cíclico de inventario > Cómo se cuenta",
+            "PR-RRHH-02 Turnos, traslados y viáticos > Introducción"
+          ],
+          "segundos": 40.7,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p23",
+          "tipo": "coloquial",
+          "pregunta": "¿Cuánto tiempo trabajo seguido si soy operador y cuánto descanso?",
+          "respuesta": "Como operador, trabajas 12 horas seguidas durante 7 días consecutivos y luego descansas 7 días. [1]\n\n[1] \"Personal de operación mina y planta: turno 7x7 (siete días de trabajo y siete de descanso), con jornadas de 12 horas.\"",
+          "correcta": false,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-RRHH-02 Turnos, traslados y viáticos > Sistemas de turno",
+            "PR-COM-02 Recepción y control de combustibles > Control al recibir",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Acreditación",
+            "PR-SEG-05 Trabajo en altura > Rescate"
+          ],
+          "segundos": 35.9,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p24",
+          "tipo": "coloquial",
+          "pregunta": "Antes de meter las manos en una máquina, ¿cómo compruebo que de verdad está apagada?",
+          "respuesta": "Antes de meter las manos en una máquina, verifica que esté apagada intentando arrancar el equipo desde su control y midiendo la tensión con un instrumento. [1]  \n\n[1] \"Verificar energía cero: intentar partir el equipo desde su control y medir tensión con un instrumento.\"",
+          "correcta": false,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-SEG-03 Bloqueo y etiquetado de energías > Pasos",
+            "PR-SEG-03 Bloqueo y etiquetado de energías > Objetivo",
+            "PR-SEG-03 Bloqueo y etiquetado de energías > Capacitación",
+            "PR-SEG-03 Bloqueo y etiquetado de energías > Retiro de un candado olvidado"
+          ],
+          "segundos": 35.9,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p25",
+          "tipo": "coloquial",
+          "pregunta": "¿Puedo repartir una compra grande en varias pedidas chicas para que la apruebe mi jefe?",
+          "respuesta": "No. Una compra no puede dividirse en varias SolPed para quedar bajo un nivel de aprobación. [1]\n\n[1] \"Una compra no puede dividirse en varias SolPed para quedar bajo un nivel de aprobación.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-COM-01 Solicitud de compra y aprobaciones > Niveles de aprobación",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Compras de emergencia",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Cotizaciones",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Quién puede solicitar"
+          ],
+          "segundos": 35.0,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p26",
+          "tipo": "coloquial",
+          "pregunta": "¿Qué número lleva la primera versión de un plano que ya está lista para construir?",
+          "respuesta": "La primera revisión aprobada para construcción lleva el número **0** [1].\n\n[1] \"La primera revisión aprobada para construcción es la 0\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-PRO-04 Control documental de proyectos > Numeración de revisiones",
+            "PR-PRO-04 Control documental de proyectos > Revisión y plazos",
+            "PR-INV-02 Conteo cíclico de inventario > Introducción",
+            "PR-PRO-04 Control documental de proyectos > Transmittals"
+          ],
+          "segundos": 29.5,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p27",
+          "tipo": "coloquial",
+          "pregunta": "¿Qué se revisa si el análisis del lubricante sale con mucho polvo?",
+          "respuesta": "No está en los documentos.",
+          "correcta": false,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": false,
+          "fuentes": [
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Muestras de aceite",
+            "PR-COM-02 Recepción y control de combustibles > Alcance",
+            "PR-COM-02 Recepción y control de combustibles > Introducción",
+            "PR-MAN-07 Análisis de causa raíz de fallas > Indicador"
+          ],
+          "segundos": 34.0
+        },
+        {
+          "id": "p28",
+          "tipo": "trampa",
+          "pregunta": "¿Cuál es el procedimiento para recibir explosivos en la faena?",
+          "respuesta": "No está en los documentos.",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-BOD-01 Recepción de materiales en bodega central > Alcance",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Introducción",
+            "PR-COM-03 Contratación de servicios > Alcance",
+            "PR-COM-02 Recepción y control de combustibles > Control al recibir"
+          ],
+          "segundos": 38.3
+        },
+        {
+          "id": "p29",
+          "tipo": "trampa",
+          "pregunta": "¿Cuántos días de vacaciones al año tiene el personal de la faena?",
+          "respuesta": "No está en los documentos.",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-RRHH-02 Turnos, traslados y viáticos > Introducción",
+            "PR-COM-03 Contratación de servicios > Alcance",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Introducción",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Inducción"
+          ],
+          "segundos": 35.8
+        },
+        {
+          "id": "p30",
+          "tipo": "trampa",
+          "pregunta": "¿Cuál es la velocidad máxima de los camiones en los caminos de la mina?",
+          "respuesta": "No está en los documentos.",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Introducción",
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Alcance",
+            "PR-OPE-01 Reporte de producción de la mina > Indicadores",
+            "PR-OPE-01 Reporte de producción de la mina > Reporte de turno"
+          ],
+          "segundos": 32.2
+        },
+        {
+          "id": "p31",
+          "tipo": "trampa casi",
+          "pregunta": "¿Cuánto es el viático diario por un viaje de trabajo al extranjero?",
+          "respuesta": "No está en los documentos.",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-RRHH-02 Turnos, traslados y viáticos > Viáticos",
+            "PR-FIN-01 Fondos fijos y rendición de gastos > Viáticos",
+            "PR-FIN-01 Fondos fijos y rendición de gastos > Rendición",
+            "PR-COM-03 Contratación de servicios > Alcance"
+          ],
+          "segundos": 27.5
+        },
+        {
+          "id": "p32",
+          "tipo": "trampa casi",
+          "pregunta": "¿A qué hora sale el bus de regreso desde la faena a Calama?",
+          "respuesta": "No está en los documentos.",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-RRHH-02 Turnos, traslados y viáticos > Traslados",
+            "PR-RRHH-02 Turnos, traslados y viáticos > Introducción",
+            "PR-COM-03 Contratación de servicios > Alcance",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Introducción"
+          ],
+          "segundos": 29.4
+        },
+        {
+          "id": "p33",
+          "tipo": "trampa casi",
+          "pregunta": "¿Cuántos días hábiles tiene el contratista para corregir un documento que volvió con código 2?",
+          "respuesta": "No está en los documentos.",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-PRO-04 Control documental de proyectos > Revisión y plazos",
+            "PR-PRO-04 Control documental de proyectos > Transmittals",
+            "PR-BOD-01 Recepción de materiales en bodega central > Diferencias en la recepción",
+            "PR-BOD-01 Recepción de materiales en bodega central > Pasos"
+          ],
+          "segundos": 34.1
+        },
+        {
+          "id": "p34",
+          "tipo": "trampa casi",
+          "pregunta": "¿Qué multa se le cobra a un proveedor que llega a la bodega central fuera del horario de recepción?",
+          "respuesta": "No está en los documentos.",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-BOD-01 Recepción de materiales en bodega central > Horario de recepción",
+            "PR-BOD-01 Recepción de materiales en bodega central > Diferencias en la recepción",
+            "PR-BOD-01 Recepción de materiales en bodega central > Introducción",
+            "PR-BOD-02 Despacho de materiales desde bodega > Horario de despacho"
+          ],
+          "segundos": 28.3
+        },
+        {
+          "id": "p35",
+          "tipo": "parecida",
+          "pregunta": "¿Quién aprueba un contrato de servicio de aseo por USD 120.000?",
+          "respuesta": "Un contrato de servicio de aseo por USD 120.000 es aprobado por el Superintendente del área. [1]\n\n[1] \"Más de USD 20.000 y hasta USD 150.000 | Superintendente del área\"",
+          "correcta": true,
+          "valida": false,
+          "problemas": [
+            "cifras que no aparecen en las fuentes citadas: ['120000']"
+          ],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-COM-03 Contratación de servicios > Niveles de aprobación",
+            "PR-COM-03 Contratación de servicios > Alcance",
+            "PR-COM-03 Contratación de servicios > Licitación",
+            "PR-COM-03 Contratación de servicios > Introducción"
+          ],
+          "segundos": 54.2,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p36",
+          "tipo": "parecida",
+          "pregunta": "¿Cuál es la meta de disponibilidad física de las palas?",
+          "respuesta": "La meta de disponibilidad física de las palas es del 92 %.[1]\n\n[1] \"Disponibilidad física de las palas: meta de 92 %.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-MAN-03 Mantención preventiva de palas eléctricas > Indicadores",
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Indicadores",
+            "PR-MAN-03 Mantención preventiva de palas eléctricas > Tolerancia",
+            "PR-MAN-03 Mantención preventiva de palas eléctricas > Introducción"
+          ],
+          "segundos": 28.2,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p37",
+          "tipo": "parecida",
+          "pregunta": "¿Cuánto se puede atrasar una pauta de mantención de las palas sin pedir autorización?",
+          "respuesta": "Se puede atrasar hasta un 5 % de su intervalo sin autorización. [1]\n\n[1] \"Una pauta de las palas se puede atrasar como máximo un 5 % de su intervalo. Atrasarla más requiere autorización del gerente de mantención.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-MAN-03 Mantención preventiva de palas eléctricas > Tolerancia",
+            "PR-MAN-03 Mantención preventiva de palas eléctricas > Pautas",
+            "PR-MAN-03 Mantención preventiva de palas eléctricas > Introducción",
+            "PR-MAN-03 Mantención preventiva de palas eléctricas > Indicadores"
+          ],
+          "segundos": 34.8,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p38",
+          "tipo": "parecida",
+          "pregunta": "¿Cada cuánto se renueva el curso de trabajo en altura?",
+          "respuesta": "El curso de trabajo en altura se renueva cada 3 años. [1]\n\n[1] \"Curso de trabajo en altura vigente. El curso dura 16 horas y se renueva cada 3 años.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-SEG-05 Trabajo en altura > Requisitos",
+            "PR-SEG-05 Trabajo en altura > Alcance",
+            "PR-SEG-05 Trabajo en altura > Introducción",
+            "PR-SEG-05 Trabajo en altura > Rescate"
+          ],
+          "segundos": 31.6,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p39",
+          "tipo": "parecida",
+          "pregunta": "¿Hasta qué hora puedo retirar materiales de la bodega central?",
+          "respuesta": "Puedes retirar materiales hasta las 23:00 horas [1].\n\n[1] \"La bodega central entrega materiales de lunes a domingo, de 07:00 a 23:00.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-BOD-02 Despacho de materiales desde bodega > Horario de despacho",
+            "PR-BOD-02 Despacho de materiales desde bodega > Cómo se retira",
+            "PR-BOD-01 Recepción de materiales en bodega central > Horario de recepción",
+            "PR-BOD-01 Recepción de materiales en bodega central > Introducción"
+          ],
+          "segundos": 30.0,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p40",
+          "tipo": "parecida",
+          "pregunta": "¿Qué diferencia obliga a hacer un segundo conteo de un repuesto clase A?",
+          "respuesta": "Si la diferencia con el ERP supera el 1 % en un repuesto clase A, se realiza un segundo conteo. [1]\n\n[1] \"El conteo es ciego: el bodeguero cuenta sin ver la cantidad del ERP. Si la diferencia con el ERP supera el 1 % en un repuesto clase A, o el 3 % en uno clase B o C, otra persona hace un segundo conteo.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-INV-02 Conteo cíclico de inventario > Cómo se cuenta",
+            "PR-INV-02 Conteo cíclico de inventario > Frecuencia",
+            "PR-INV-01 Política de inventario de repuestos > Política de reposición",
+            "PR-INV-01 Política de inventario de repuestos > Clasificación ABC"
+          ],
+          "segundos": 33.0,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p41",
+          "tipo": "parecida",
+          "pregunta": "¿Qué porcentaje pesa la parte técnica al evaluar las ofertas de una licitación de servicios?",
+          "respuesta": "El 60 % del puntaje corresponde a la parte técnica. [1]\n\n[1] \"Las ofertas se evalúan con un 60 % de puntaje técnico y un 40 % de puntaje económico.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-COM-03 Contratación de servicios > Licitación",
+            "PR-COM-03 Contratación de servicios > Introducción",
+            "PR-COM-03 Contratación de servicios > Alcance",
+            "PR-COM-03 Contratación de servicios > Evaluación de desempeño"
+          ],
+          "segundos": 31.7,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p42",
+          "tipo": "parecida",
+          "pregunta": "¿De qué color es el casco de los trabajadores contratistas?",
+          "respuesta": "El casco de los trabajadores contratistas es de color naranja. [1]\n\n[1] \"Naranja | Trabajadores contratistas\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-SEG-09 Elementos de protección personal > Color del casco",
+            "PR-SEG-09 Elementos de protección personal > EPP básico",
+            "PR-SEG-09 Elementos de protección personal > Reposición",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Credencial"
+          ],
+          "segundos": 32.3,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p43",
+          "tipo": "parecida",
+          "pregunta": "¿Cuánto dura la inducción de faena de un trabajador contratista?",
+          "respuesta": "La inducción de faena dura 8 horas. [1]\n\n[1] \"La inducción de faena dura 8 horas y se aprueba con un 80 % de respuestas correctas. Tiene una vigencia de 1 año.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Inducción",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Acreditación",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Credencial",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Introducción"
+          ],
+          "segundos": 31.3,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p44",
+          "tipo": "parecida",
+          "pregunta": "¿Qué diferencia de volumen se acepta al recibir una cisterna de diésel?",
+          "respuesta": "Se acepta una diferencia de volumen de hasta 0,5 % al recibir una cisterna de diésel.  \n\n[1] \"Si la diferencia supera el 0,5 %, no descarga y avisa al jefe de combustibles.\"",
+          "correcta": true,
+          "valida": false,
+          "problemas": [
+            "la respuesta no cita ninguna fuente",
+            "cifras que no aparecen en las fuentes citadas: ['0.5']"
+          ],
+          "cita_seccion_correcta": false,
+          "fuentes": [
+            "PR-COM-02 Recepción y control de combustibles > Control al recibir",
+            "PR-COM-02 Recepción y control de combustibles > Inventario de combustible",
+            "PR-BOD-01 Recepción de materiales en bodega central > Diferencias en la recepción",
+            "PR-COM-02 Recepción y control de combustibles > Alcance"
+          ],
+          "segundos": 44.9,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p45",
+          "tipo": "parecida",
+          "pregunta": "¿Cada cuánto se evalúa el desempeño de un contratista de servicios?",
+          "respuesta": "Se evalúa cada 3 meses. [1]\n\n[1] \"El administrador del contrato evalúa al contratista cada 3 meses. Dos evaluaciones seguidas con menos de 60 puntos son causal de término anticipado.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-COM-03 Contratación de servicios > Evaluación de desempeño",
+            "PR-COM-03 Contratación de servicios > Garantías",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Acreditación",
+            "PR-COM-03 Contratación de servicios > Introducción"
+          ],
+          "segundos": 32.1,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p46",
+          "tipo": "parecida",
+          "pregunta": "¿Cada cuánto se cuentan los repuestos clase B?",
+          "respuesta": "Los repuestos clase B se cuentan cada 3 meses. [1]\n\n[1] \"Cada 3 meses\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-INV-02 Conteo cíclico de inventario > Frecuencia",
+            "PR-INV-02 Conteo cíclico de inventario > Cómo se cuenta",
+            "PR-INV-01 Política de inventario de repuestos > Clasificación ABC",
+            "PR-INV-01 Política de inventario de repuestos > Política de reposición"
+          ],
+          "segundos": 29.2,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p47",
+          "tipo": "versión",
+          "pregunta": "¿Quién aprueba una solicitud de compra de USD 150.000?",
+          "respuesta": "El Gerente de operaciones aprueba la solicitud de compra de USD 150.000. [1]\n\n[1] \"Más de USD 50.000 y hasta USD 250.000 | Gerente de operaciones\"",
+          "correcta": true,
+          "valida": false,
+          "problemas": [
+            "cifras que no aparecen en las fuentes citadas: ['150000']"
+          ],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-COM-01 Solicitud de compra y aprobaciones > Niveles de aprobación",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Introducción",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Cotizaciones",
+            "PR-BOD-01 Recepción de materiales en bodega central > Introducción"
+          ],
+          "segundos": 55.6,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p48",
+          "tipo": "versión",
+          "pregunta": "¿Quién aprueba una solicitud de compra de USD 30.000?",
+          "respuesta": "Superintendente del área aprueba una solicitud de compra de USD 30 000. [1]\n\n[1] \"Más de USD 5.000 y hasta USD 50.000 | Superintendente del área\"",
+          "correcta": true,
+          "valida": false,
+          "problemas": [
+            "cifras que no aparecen en las fuentes citadas: ['30000']"
+          ],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-COM-01 Solicitud de compra y aprobaciones > Niveles de aprobación",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Compras de emergencia",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Quién puede solicitar",
+            "PR-MAN-07 Análisis de causa raíz de fallas > Introducción"
+          ],
+          "segundos": 48.3,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p49",
+          "tipo": "versión",
+          "pregunta": "¿Desde qué monto se piden tres cotizaciones para una compra?",
+          "respuesta": "Desde más de USD 10.000. [1]\n\n[1] \"Compras de más de USD 10.000: se piden al menos tres cotizaciones de proveedores distintos.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-COM-01 Solicitud de compra y aprobaciones > Cotizaciones",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Niveles de aprobación",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Quién puede solicitar",
+            "PR-COM-03 Contratación de servicios > Niveles de aprobación"
+          ],
+          "segundos": 32.1,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p50",
+          "tipo": "directa",
+          "pregunta": "¿Qué tasa de descuento se usa para evaluar un proyecto de inversión?",
+          "respuesta": "Se utiliza una tasa de descuento real del 8 % anual. [1]\n\n[1] \"Tasa de descuento real de 8 % anual.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-PRO-06 Evaluación económica de proyectos de inversión > Supuestos obligatorios",
+            "PR-PRO-06 Evaluación económica de proyectos de inversión > Cuándo se exige",
+            "PR-PRO-06 Evaluación económica de proyectos de inversión > Introducción",
+            "PR-PRO-06 Evaluación económica de proyectos de inversión > Sensibilidad"
+          ],
+          "segundos": 30.1,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p51",
+          "tipo": "directa",
+          "pregunta": "¿Qué boleta de garantía entrega un contratista y por qué porcentaje del contrato?",
+          "respuesta": "El contratista entrega una boleta de garantía de fiel cumplimiento por el 10 % del valor del contrato. [1]\n\n[1] \"El contratista entrega una boleta de garantía de fiel cumplimiento por el 10 % del valor del contrato, vigente hasta 90 días después del término del contrato.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-COM-03 Contratación de servicios > Garantías",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Acreditación",
+            "PR-COM-03 Contratación de servicios > Evaluación de desempeño",
+            "PR-INV-02 Conteo cíclico de inventario > Indicador"
+          ],
+          "segundos": 30.7,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p52",
+          "tipo": "directa",
+          "pregunta": "¿A qué presión se inflan los neumáticos de los camiones de extracción?",
+          "respuesta": "Se inflan a 100 psi en frío, con una tolerancia de ±5 psi. [1]\n\n[1] \"La presión de trabajo es de 100 psi en frío, con una tolerancia de 5 psi hacia arriba o hacia abajo.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-MAN-05 Gestión de neumáticos de camiones de extracción > Inspección",
+            "PR-MAN-05 Gestión de neumáticos de camiones de extracción > Rotación",
+            "PR-MAN-05 Gestión de neumáticos de camiones de extracción > Retiro",
+            "PR-MAN-05 Gestión de neumáticos de camiones de extracción > Introducción"
+          ],
+          "segundos": 35.5,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p53",
+          "tipo": "directa",
+          "pregunta": "¿Quién aprueba un ajuste de inventario de USD 8.000?",
+          "respuesta": "El controller de la faena aprueba un ajuste de inventario de USD 8.000.  \n\n[1] \"Un ajuste de más de USD 5.000 lo aprueba el controller de la faena.\"",
+          "correcta": true,
+          "valida": false,
+          "problemas": [
+            "la respuesta no cita ninguna fuente",
+            "cifras que no aparecen en las fuentes citadas: ['8000']"
+          ],
+          "cita_seccion_correcta": false,
+          "fuentes": [
+            "PR-INV-02 Conteo cíclico de inventario > Ajustes",
+            "PR-PRO-02 Control de cambios en proyectos de capital > Quién aprueba",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Niveles de aprobación",
+            "PR-MAN-07 Análisis de causa raíz de fallas > Introducción"
+          ],
+          "segundos": 45.9,
+          "fidelidad": 0.5
+        },
+        {
+          "id": "p54",
+          "tipo": "directa",
+          "pregunta": "¿Cuánto tiempo puede quedar como máximo un residuo peligroso en el patio?",
+          "respuesta": "Un residuo peligroso no puede permanecer más de 6 meses en el patio. [1]\n\n[1] \"Ningún residuo puede quedar más de 6 meses en el patio.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-AMB-01 Manejo de residuos peligrosos > Almacenamiento",
+            "PR-AMB-01 Manejo de residuos peligrosos > Introducción",
+            "PR-AMB-01 Manejo de residuos peligrosos > Qué es un residuo peligroso",
+            "PR-AMB-01 Manejo de residuos peligrosos > Retiro"
+          ],
+          "segundos": 30.2,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p55",
+          "tipo": "directa",
+          "pregunta": "¿Cuándo se cambian los dientes del balde de una pala?",
+          "respuesta": "Los dientes se cambian cuando su largo baja del 60 % del largo original; se cambian todos los dientes del balde a la vez, nunca uno solo. [1]\n\n[1] \"Los dientes se cambian cuando su largo baja del 60 % del largo original. Se cambian todos los dientes del balde a la vez, nunca uno solo.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-MAN-03 Mantención preventiva de palas eléctricas > Dientes del balde",
+            "PR-MAN-03 Mantención preventiva de palas eléctricas > Tolerancia",
+            "PR-MAN-03 Mantención preventiva de palas eléctricas > Pautas",
+            "PR-MAN-03 Mantención preventiva de palas eléctricas > Indicadores"
+          ],
+          "segundos": 31.3,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p56",
+          "tipo": "directa",
+          "pregunta": "¿Con cuánta anticipación sube sus documentos una empresa contratista para acreditar a un trabajador?",
+          "respuesta": "La empresa contratista sube los documentos con al menos 5 días hábiles de anticipación.[1]\n\n[1] \"La empresa contratista sube los documentos con al menos 5 días hábiles de anticipación.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Acreditación",
+            "PR-PRO-04 Control documental de proyectos > Alcance",
+            "PR-COM-03 Contratación de servicios > Garantías",
+            "PR-RRHH-04 Ingreso de trabajadores contratistas a la faena > Credencial"
+          ],
+          "segundos": 32.9,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p57",
+          "tipo": "directa",
+          "pregunta": "¿Cuál es la meta de espera de los camiones en la pala?",
+          "respuesta": "Menos de 4 minutos [1].\n\n[1] \"Menos de 4 minutos\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-OPE-01 Reporte de producción de la mina > Indicadores",
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Indicadores",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Compras de emergencia",
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Alcance"
+          ],
+          "segundos": 29.3,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p58",
+          "tipo": "directa",
+          "pregunta": "¿Qué elementos de protección personal son obligatorios en la faena?",
+          "respuesta": "En la faena, fuera de oficinas y comedores, son obligatorios el casco, los lentes de seguridad, los zapatos de seguridad y el chaleco reflectante, y la protección auditiva cuando el ruido supera 85 dB. [1]\n\n[1] \"En toda la faena, fuera de oficinas y comedores, se usa casco, lentes de seguridad, zapatos de seguridad y chaleco reflectante, y protección auditiva donde el ruido supera 85 dB.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-SEG-09 Elementos de protección personal > EPP básico",
+            "PR-SEG-09 Elementos de protección personal > Introducción",
+            "PR-SEG-09 Elementos de protección personal > Fiscalización",
+            "PR-SEG-09 Elementos de protección personal > Color del casco"
+          ],
+          "segundos": 34.7,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p59",
+          "tipo": "directa",
+          "pregunta": "¿Cómo se clasifica un proyecto cuyo VAN cambia de signo si la inversión sube 10 %?",
+          "respuesta": "Se clasifica como un proyecto de riesgo alto. [1]\n\n[1] \"Si el VAN cambia de signo con una variación de 10 % en alguna variable, el proyecto se informa como de riesgo alto.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-PRO-06 Evaluación económica de proyectos de inversión > Sensibilidad",
+            "PR-PRO-06 Evaluación económica de proyectos de inversión > Indicadores",
+            "PR-PRO-06 Evaluación económica de proyectos de inversión > Cuándo se exige",
+            "PR-PRO-02 Control de cambios en proyectos de capital > Quién aprueba"
+          ],
+          "segundos": 32.0,
+          "fidelidad": 0.0
+        },
+        {
+          "id": "p60",
+          "tipo": "coloquial",
+          "pregunta": "Al camión 14 se le cortó la misma manguera tres veces en dos meses, ¿hay que hacer algo especial?",
+          "respuesta": "Sí, se debe realizar un análisis de causa raíz (ACR) porque la falla se ha repetido tres veces en el mismo equipo en 90 días [1], y el ACR se lleva a cabo siguiendo el método descrito en la política [2].\n\n[1] \"se repite tres veces en el mismo equipo en 90 días.\"\n[2] \"Se forma un equipo con el supervisor del área, el mantenedor que atendió la falla y el ingeniero de confiabilidad.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-MAN-07 Análisis de causa raíz de fallas > Cuándo se hace",
+            "PR-MAN-07 Análisis de causa raíz de fallas > Método",
+            "PR-MAN-07 Análisis de causa raíz de fallas > Introducción",
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Indicadores"
+          ],
+          "segundos": 45.7,
+          "fidelidad": null
+        },
+        {
+          "id": "p61",
+          "tipo": "coloquial",
+          "pregunta": "Casi se nos cae una carga del puente grúa y pudo matar a alguien, ¿en cuánto tiempo hay que investigarlo?",
+          "respuesta": "En 5 días hábiles. [1]\n\n[1] \"Investigación de un incidente de alto potencial | 5 días hábiles\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-SEG-07 Reporte e investigación de incidentes > Plazos",
+            "PR-SEG-07 Reporte e investigación de incidentes > Clasificación",
+            "PR-SEG-07 Reporte e investigación de incidentes > Qué se reporta",
+            "PR-SEG-07 Reporte e investigación de incidentes > Lecciones aprendidas"
+          ],
+          "segundos": 39.5,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p62",
+          "tipo": "coloquial",
+          "pregunta": "Me sobró material de una pega, ¿hasta cuándo lo puedo devolver a la bodega?",
+          "respuesta": "Puedes devolverlo a la bodega en un plazo de 5 días hábiles, manteniendo su embalaje original. [1]\n\n[1] \"El material que no se usó se devuelve a la bodega en un plazo de 5 días hábiles, en su embalaje original. Pasado ese plazo, se carga al centro de costo del área.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-BOD-02 Despacho de materiales desde bodega > Devoluciones",
+            "PR-BOD-01 Recepción de materiales en bodega central > Diferencias en la recepción",
+            "PR-BOD-01 Recepción de materiales en bodega central > Pasos",
+            "PR-BOD-02 Despacho de materiales desde bodega > Cómo se retira"
+          ],
+          "segundos": 35.1,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p63",
+          "tipo": "coloquial",
+          "pregunta": "¿Dónde dejo el aceite usado después de una mantención?",
+          "respuesta": "Después de una mantención, el aceite usado debe dejarse en el patio de residuos peligrosos (sector RESPEL) [1][2].\n\n[1] \"Los residuos peligrosos se llevan al patio de residuos peligrosos (sector RESPEL), que tiene piso impermeable, techo y pretil para contener derrames.\"\n[2] \"Aceite usado, filtros con aceite, baterías, tubos fluorescentes, envases de solventes y paños contaminados con hidrocarburos.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-AMB-01 Manejo de residuos peligrosos > Almacenamiento",
+            "PR-AMB-01 Manejo de residuos peligrosos > Qué es un residuo peligroso",
+            "PR-AMB-01 Manejo de residuos peligrosos > Retiro",
+            "PR-AMB-01 Manejo de residuos peligrosos > Derrames"
+          ],
+          "segundos": 38.2,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p64",
+          "tipo": "coloquial",
+          "pregunta": "Un neumático tiene un tajo donde se ven las lonas, ¿lo puedo seguir usando?",
+          "respuesta": "No, no se puede seguir usando. Un neumático se retira cuando le queda menos del 15 % de la profundidad original de la banda, o cuando tiene un corte que deja las lonas a la vista. [1]\n\n[1] \"Un neumático se retira cuando le queda menos del 15 % de la profundidad original de la banda, o cuando tiene un corte que deja las lonas a la vista.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-MAN-05 Gestión de neumáticos de camiones de extracción > Retiro",
+            "PR-MAN-05 Gestión de neumáticos de camiones de extracción > Inspección",
+            "PR-MAN-05 Gestión de neumáticos de camiones de extracción > Rotación",
+            "PR-MAN-05 Gestión de neumáticos de camiones de extracción > Seguridad"
+          ],
+          "segundos": 33.1,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p65",
+          "tipo": "coloquial",
+          "pregunta": "¿Puedo pagar con la caja chica una compra de 80 lucas?",
+          "respuesta": "No, no puedes pagar con la caja chica una compra de 80 000 CLP; debes usar una SolPed. [1]\n\n[1] \"Cada superintendencia tiene un fondo fijo de CLP 300.000 para gastos menores urgentes. Un gasto de más de CLP 50.000 no se paga con el fondo fijo: se compra con una SolPed según PR-COM-01.\"",
+          "correcta": true,
+          "valida": false,
+          "problemas": [
+            "cifras que no aparecen en las fuentes citadas: ['80000']"
+          ],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-FIN-01 Fondos fijos y rendición de gastos > Fondos fijos",
+            "PR-PRO-06 Evaluación económica de proyectos de inversión > Supuestos obligatorios",
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Introducción",
+            "PR-COM-01 Solicitud de compra y aprobaciones > Compras de emergencia"
+          ],
+          "segundos": 70.0,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p66",
+          "tipo": "coloquial",
+          "pregunta": "¿El jefe de turno puede corregir las toneladas que quedaron mal en el despacho?",
+          "respuesta": "No, el jefe de turno no puede corregir las toneladas que quedaron mal en el despacho; solo el analista de despacho puede hacerlo. [1]\n\n[1] \"Un dato del sistema de despacho solo lo corrige el analista de despacho, dejando registro del valor anterior y del motivo del cambio.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-OPE-01 Reporte de producción de la mina > Correcciones",
+            "PR-OPE-01 Reporte de producción de la mina > Reporte de turno",
+            "PR-OPE-01 Reporte de producción de la mina > Indicadores",
+            "PR-BOD-02 Despacho de materiales desde bodega > Horario de despacho"
+          ],
+          "segundos": 33.0,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p67",
+          "tipo": "coloquial",
+          "pregunta": "Si un cambio atrasa el proyecto 45 días, ¿quién tiene que aprobarlo?",
+          "respuesta": "El Comité de inversiones debe aprobarlo. [1]\n\n[1] \"Más de 5 % del presupuesto o más de 30 días de atraso | Comité de inversiones\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-PRO-02 Control de cambios en proyectos de capital > Quién aprueba",
+            "PR-PRO-02 Control de cambios en proyectos de capital > Qué es un cambio",
+            "PR-PRO-02 Control de cambios en proyectos de capital > Plazos",
+            "PR-PRO-04 Control documental de proyectos > Revisión y plazos"
+          ],
+          "segundos": 51.7,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p68",
+          "tipo": "coloquial",
+          "pregunta": "Si alguien queda colgado del arnés, ¿en cuánto tiempo hay que poder sacarlo?",
+          "respuesta": "En menos de 15 minutos. [1]\n\n[1] \"El rescate debe poder hacerse en menos de 15 minutos.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-SEG-05 Trabajo en altura > Rescate",
+            "PR-SEG-05 Trabajo en altura > Requisitos",
+            "PR-SEG-05 Trabajo en altura > Alcance",
+            "PR-SEG-05 Trabajo en altura > Introducción"
+          ],
+          "segundos": 29.9,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p69",
+          "tipo": "coloquial",
+          "pregunta": "Se derramaron 300 litros de petróleo, ¿a quién le aviso?",
+          "respuesta": "Se informa de inmediato al jefe de medio ambiente. [1]\n\n[1] \"Un derrame de más de 200 litros de hidrocarburo se informa de inmediato al jefe de medio ambiente, que avisa a la autoridad dentro de 24 horas.\"",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-AMB-01 Manejo de residuos peligrosos > Derrames",
+            "PR-SEG-07 Reporte e investigación de incidentes > Plazos",
+            "PR-SEG-07 Reporte e investigación de incidentes > Qué se reporta",
+            "PR-AMB-01 Manejo de residuos peligrosos > Introducción"
+          ],
+          "segundos": 31.0,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p70",
+          "tipo": "trampa casi",
+          "pregunta": "¿Cuántas personas se necesitan como mínimo para armar un andamio?",
+          "respuesta": "No está en los documentos.",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-SEG-05 Trabajo en altura > Andamios",
+            "PR-SEG-05 Trabajo en altura > Requisitos",
+            "PR-RRHH-02 Turnos, traslados y viáticos > Introducción",
+            "PR-AMB-01 Manejo de residuos peligrosos > Introducción"
+          ],
+          "segundos": 26.4
+        },
+        {
+          "id": "p71",
+          "tipo": "trampa casi",
+          "pregunta": "¿Cuál es la meta de vida media de los neumáticos de las camionetas?",
+          "respuesta": "No está en los documentos.",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-MAN-05 Gestión de neumáticos de camiones de extracción > Indicadores",
+            "PR-MAN-05 Gestión de neumáticos de camiones de extracción > Rotación",
+            "PR-MAN-05 Gestión de neumáticos de camiones de extracción > Retiro",
+            "PR-MAN-05 Gestión de neumáticos de camiones de extracción > Inspección"
+          ],
+          "segundos": 36.0
+        },
+        {
+          "id": "p72",
+          "tipo": "trampa casi",
+          "pregunta": "¿De cuánto es el fondo fijo de cada gerencia?",
+          "respuesta": "El fondo fijo de cada gerencia es de CLP 300.000. [1]\n\n[1] \"Cada superintendencia tiene un fondo fijo de CLP 300.000 para gastos menores urgentes.\"",
+          "correcta": false,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-FIN-01 Fondos fijos y rendición de gastos > Fondos fijos",
+            "PR-FIN-01 Fondos fijos y rendición de gastos > Reposición del fondo",
+            "PR-FIN-01 Fondos fijos y rendición de gastos > Introducción",
+            "PR-FIN-01 Fondos fijos y rendición de gastos > Viáticos"
+          ],
+          "segundos": 32.2,
+          "fidelidad": 1.0
+        },
+        {
+          "id": "p73",
+          "tipo": "trampa casi",
+          "pregunta": "¿Cuántos días se demora el laboratorio en entregar el análisis de aceite?",
+          "respuesta": "No está en los documentos.",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-MAN-02 Mantención preventiva de camiones de extracción > Muestras de aceite",
+            "PR-MAN-07 Análisis de causa raíz de fallas > Cuándo se hace",
+            "PR-MAN-07 Análisis de causa raíz de fallas > Indicador",
+            "PR-MAN-07 Análisis de causa raíz de fallas > Plazos"
+          ],
+          "segundos": 28.0
+        },
+        {
+          "id": "p74",
+          "tipo": "trampa casi",
+          "pregunta": "¿De qué color es el casco de los practicantes?",
+          "respuesta": "No está en los documentos.",
+          "correcta": true,
+          "valida": true,
+          "problemas": [],
+          "cita_seccion_correcta": true,
+          "fuentes": [
+            "PR-SEG-09 Elementos de protección personal > Color del casco",
+            "PR-SEG-09 Elementos de protección personal > EPP básico",
+            "PR-SEG-09 Elementos de protección personal > Reposición",
+            "PR-SEG-09 Elementos de protección personal > Fiscalización"
+          ],
+          "segundos": 26.6
+        }
+      ]
+    }
+  },
+  "minutos": {
+    "indices": 12.0,
+    "calibracion": 1.7,
+    "busqueda: BM25": 0.0,
+    "busqueda: Vectores": 2.2,
+    "busqueda: Híbrido (v1)": 2.2,
+    "busqueda: Híbrido sin descartar obsoletos": 2.3,
+    "busqueda: Híbrido + contexto": 2.2,
+    "busqueda: Híbrido + contexto + reescritura": 15.2,
+    "busqueda: Híbrido + contexto + reordenamiento": 9.1,
+    "busqueda: Híbrido + contexto + reescritura + reordenamiento": 15.7,
+    "respuestas v1": 52.7,
+    "respuestas v2": 57.7
+  },
+  "llamadas_al_modelo": {
+    "respuestas": 168,
+    "auxiliar": 330,
+    "juez": 125
+  }
+}
