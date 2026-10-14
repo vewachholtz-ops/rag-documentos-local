@@ -49,7 +49,7 @@ flowchart LR
   [Open Notebook](https://github.com/lfnovo/open-notebook). `npm run build` la deja en [`app/`](../app/),
   que se sube al repositorio para que usar la app no necesite Node.
 - **El servidor** ([`servidor.py`](../src/rag_local/servidor.py), solo la biblioteca estándar de Python): sirve
-  `app/` y una API local; el contrato está en [PLAN.md](../PLAN.md#api-contrato-entre-interfaz-y-servidor).
+  `app/` y una API local. Sus rutas están definidas en el mismo módulo.
 
 Lo que pasa por dentro:
 
@@ -112,7 +112,7 @@ Lo que pasa por dentro:
 - **La ventana:** `abrir-app.bat` la abre con Edge o Chrome en modo app (sin pestañas ni barra de direcciones)
   y, la primera vez, ofrece un acceso directo en el escritorio.
 
-Lo pendiente está en [PLAN.md](../PLAN.md): embeddings por API y probar con gpt-oss de verdad.
+Quedan pendientes los embeddings por API y la validación de la app actual con gpt-oss real.
 
 La [página de la evaluación](https://vewachholtz-ops.github.io/rag-documentos-local/) ([`web/`](../web/), armada
 en `site/` por `scripts/construir_sitio.py`) muestra lo que respondió el motor en cada pregunta, sin modelo: lo
@@ -183,7 +183,7 @@ Los tests ([`tests/`](../tests/)) corren sin Ollama: el embedder y el modelo de 
 
 Las pruebas de [`tests/test_app_navegador.py`](../tests/test_app_navegador.py) abren la app en Chromium con un Ollama de mentira y recorren lo que hace una persona: abrirla por primera vez y crear un cuaderno, agregar un PDF y un Markdown, preguntar, abrir el pasaje de una cita, guardar una respuesta como nota, dejar fuentes fuera del chat, buscar sin IA, descargar un modelo que falta, pasar a solo buscar si Ollama está cerrado, configurar una API sin que la clave vuelva a la página, conectar una carpeta y sincronizarla, agregar una página web desde su enlace, tener varias conversaciones que siguen al recargar, escribir la guía de una fuente y usar sus preguntas, generar en Estudio un mapa de ideas (y preguntar por una idea), un cuestionario, tarjetas y una instrucción propia, cancelar lo que se está escribiendo, configurar el chat, convertir una nota en fuente y, en el celular, que las columnas sean pestañas y nada se salga de la pantalla. Las de [`tests/test_navegador.py`](../tests/test_navegador.py) abren la página de la evaluación (con Playwright) y revisan lo que las de Python no ven: que una pregunta parecida pero distinta ("clase C" en vez de "clase B", otra moneda, otro monto, una negación) se sugiera y no se responda con otra; que cada mensaje diga su versión; que no se pueda mandar otra pregunta mientras responde; y que en el celular los paneles cerrados no se alcancen con el teclado.
 
-La verificación de Tesela registrada en [ESTADO.md](../ESTADO.md) usa proveedores simulados. Las pruebas con
+La verificación automática de Tesela usa proveedores simulados. Las pruebas con
 Ollama y una API real siguen pendientes; las capturas usan el modelo simulado y no acreditan la exactitud de Tesela.
 
 GitHub Actions construye la interfaz y revisa que `app/` calce con `interfaz/`, corre `ruff` y `pytest` (con Chromium) y revisa que `site/` esté al día en cada cambio.

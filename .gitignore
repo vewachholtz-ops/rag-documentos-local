@@ -6,3 +6,14 @@ __pycache__/
 biblioteca/
 .acceso-directo
 site/app/
+
+# Apuntes de trabajo y material retirado: se conservan localmente.
+/AGENTS.md
+/CLAUDE.md
+/PLAN.md
+/ESTADO.md
+/AUDITORIA.md
+/PUBLICACION.md
+/docs/tesela-diseno.md
+/docs/demo.gif
+/revisiones/2026-10-13-correcciones-mesa.md
